@@ -17,6 +17,9 @@
     "brenden-dev-e2e": {
       "tags": [],
       "implicitDependencies": ["brenden-dev"]
+    },
+    "components": {
+      "tags": []
     }
   }
 }
