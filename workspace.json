@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "projects": {
+    "brenden-dev": {
+      "root": "apps/brenden-dev",
+      "sourceRoot": "apps/brenden-dev",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/brenden-dev",
+            "outputPath": "dist/apps/brenden-dev"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/brenden-dev/environments/environment.ts",
+                  "with": "apps/brenden-dev/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:dev-server",
+          "options": {
+            "buildTarget": "brenden-dev:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "brenden-dev:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "brenden-dev:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/brenden-dev/.eslintrc",
+            "tsConfig": [
+              "apps/brenden-dev/tsconfig.json",
+              "apps/brenden-dev/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/brenden-dev/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/brenden-dev/jest.config.js",
+            "tsConfig": "apps/brenden-dev/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "brenden-dev-e2e": {
+      "root": "apps/brenden-dev-e2e",
+      "sourceRoot": "apps/brenden-dev-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/brenden-dev-e2e/cypress.json",
+            "tsConfig": "apps/brenden-dev-e2e/tsconfig.e2e.json",
+            "devServerTarget": "brenden-dev:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "brenden-dev:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/brenden-dev-e2e/.eslintrc",
+            "tsConfig": ["apps/brenden-dev-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/brenden-dev-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/react": {
+      "application": {
+        "linter": "eslint",
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/web": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nx-plugin": {
+      "plugin": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "brenden-dev"
+}
