@@ -17,6 +17,7 @@ export const Index = () => {
         <section>
           <Welcome />
         </section>
+        <section></section>
       </main>
     </div>
   );

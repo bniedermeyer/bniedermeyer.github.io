@@ -1,0 +1,23 @@
+.welcome {
+  position: relative;
+  width: 100%;
+}
+
+.welcome-text-container {
+  position: absolute;
+  display: flex;
+  /* z-index: 100; */
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

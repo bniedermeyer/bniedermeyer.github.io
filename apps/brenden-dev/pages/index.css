@@ -39,12 +39,12 @@ body {
 
 .app h1 {
   text-align: center;
-  margin-left: 18px;
-  font-size: 24px;
+  /* margin-left: 18px; */
+  font-size: 6em;
 }
 
 .app h2 {
   text-align: center;
-  font-size: 20px;
-  margin: 40px 0 10px 0;
+  font-size: 4em;
+  /* margin: 40px 0 10px 0; */
 }
