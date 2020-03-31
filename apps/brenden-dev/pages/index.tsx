@@ -3,7 +3,9 @@ import React from 'react';
 import './index.css';
 
 import { environment } from '../environments/environment';
-import { Welcome } from '@personal-site/components';
+import { Info } from '../sections/info/info';
+import { Welcome } from '../sections/welcome/welcome';
+import { ReactComponent as Blog } from '../assets/blog.svg';
 
 export const Index = () => {
   /*
@@ -14,10 +16,12 @@ export const Index = () => {
   return (
     <div className="app">
       <main className="main">
-        <section>
+        <section className="welcome">
           <Welcome />
         </section>
-        <section></section>
+        <section>
+          <Info />
+        </section>
       </main>
     </div>
   );

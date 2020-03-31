@@ -2,7 +2,7 @@ import React from 'react';
 
 import './welcome.css';
 
-import { ConfiguredParticles } from '../configured-particles/configured-particles';
+import { ConfiguredParticles } from '@personal-site/components';
 
 export const Welcome = () => {
   return (
