@@ -1,6 +1,18 @@
 .skills {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
   background-color: #eebbc3;
+  padding: 50px 0;
+}
+
+.skills-grid {
+  display: grid;
+  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
-  margin: auto;
-  text-align: center;
+  row-gap: 10px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
 }
