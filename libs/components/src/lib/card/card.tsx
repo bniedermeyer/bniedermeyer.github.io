@@ -9,8 +9,8 @@ export interface CardProps {
 
 export const Card = ({ url, children }) => {
   return (
-    <a className="card" href={url}>
-      <div className="cardContent">{children}</div>
+    <a className="card hover-shadow" href={url}>
+      <div className="card-content">{children}</div>
     </a>
   );
 };
