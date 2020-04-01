@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@personal-site/components": ["libs/components/src/index.ts"]
+      "@personal-site/components": ["libs/components/src/index.ts"],
+      "@personal-site/utility": ["libs/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
