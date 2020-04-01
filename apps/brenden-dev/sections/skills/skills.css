@@ -1,0 +1,6 @@
+.skills {
+  background-color: #eebbc3;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+  text-align: center;
+}

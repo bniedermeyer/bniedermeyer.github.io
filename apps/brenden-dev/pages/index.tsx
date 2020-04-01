@@ -5,7 +5,7 @@ import './index.css';
 import { environment } from '../environments/environment';
 import { Info } from '../sections/info/info';
 import { Welcome } from '../sections/welcome/welcome';
-import { ReactComponent as Blog } from '../assets/blog.svg';
+import { Skills } from '../sections/skills/skills';
 
 export const Index = () => {
   /*
@@ -21,6 +21,9 @@ export const Index = () => {
         </section>
         <section>
           <Info />
+        </section>
+        <section>
+          <Skills />
         </section>
       </main>
     </div>
