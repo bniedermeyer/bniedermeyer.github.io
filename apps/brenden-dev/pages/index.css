@@ -39,14 +39,12 @@ body {
 
 .app h1 {
   text-align: center;
-  /* margin-left: 18px; */
-  font-size: 6em;
+  font-size: 3em;
 }
 
 .app h2 {
   text-align: center;
-  font-size: 4em;
-  /* margin: 40px 0 10px 0; */
+  font-size: 2em;
 }
 
 .app .hover-shadow {

@@ -3,11 +3,17 @@ import Particles from 'react-particles-js';
 
 import './configured-particles.css';
 
-export const ConfiguredParticles = () => {
+/* eslint-disable-next-line */
+export interface ConfiguredParticlesProps {
+  height: string;
+  width: string;
+}
+
+export const ConfiguredParticles = ({ height, width }) => {
   return (
     <Particles
-      height={'100%'}
-      width={'100%'}
+      height={height}
+      width={width}
       params={{
         particles: {
           number: {

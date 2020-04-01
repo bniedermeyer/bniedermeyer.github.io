@@ -11,9 +11,15 @@ export const Welcome = () => {
         <div className="welcome-text">
           <h1>Hi! I'm Brenden</h1>
           <h2>I'm a web developer in Seattle</h2>
+          <h3>
+            I specialize in building powerful apps with modern web technologies.
+            Learn more about me at my <a href="https://brenden.codes">blog</a>,
+            or <a href="https://brenden.fyi">resume</a>.<br />
+            You can see some of my work <a href="#info">here</a>.
+          </h3>
         </div>
       </div>
-      <ConfiguredParticles />
+      <ConfiguredParticles height={'100vh'} width={'100%'} />
     </div>
   );
 };

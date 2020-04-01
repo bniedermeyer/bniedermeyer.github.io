@@ -30,7 +30,7 @@ export const Info = (props: InfoProps) => {
     </Card>
   ];
   return (
-    <div className="info">
+    <div className="info" id="info">
       <div className="cards">{cards}</div>
     </div>
   );
