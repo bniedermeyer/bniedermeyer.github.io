@@ -25,7 +25,7 @@ export const Navbar = () => {
   return (
     <nav>
       <div className={`navbar ${visible} ${hidden}`}>
-        <div>Brenden Niedermeyer</div>
+        <h1>Brenden Niedermeyer</h1>
       </div>
     </nav>
   );

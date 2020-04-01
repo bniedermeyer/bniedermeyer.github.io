@@ -23,3 +23,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+.navbar h1 {
+  font-size: 1.5em;
+}

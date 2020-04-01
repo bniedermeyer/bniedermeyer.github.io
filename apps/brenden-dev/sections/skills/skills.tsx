@@ -11,13 +11,14 @@ export const Skills = (props: SkillsProps) => {
     <div className="skills">
       <div className="skills-grid">
         <Logo name="angular" />
+        <Logo name="react" />
         <Logo name="rxjs" />
-        <Logo name="kubernetes" />
+        <Logo name="typescript" />
         <Logo name="nodejs" />
+        <Logo name="kubernetes" />
         <Logo name="google" />
         <Logo name="html5" />
         <Logo name="sass" />
-        <Logo name="typescript" />
       </div>
     </div>
   );
