@@ -1,35 +1,42 @@
 .welcome {
   position: relative;
-
+  display: flex;
+  align-items: center;
   height: 100vh;
 }
 
-.welcome .welcome-text-container {
+.welcome .welcome-content-container {
   position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.welcome .welcome-content-container .welcome-text-container {
   display: flex;
   color: #b8c1ec;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  line-height: 1em;
 }
-.welcome .welcome-text-container h1 {
+.welcome .welcome-content-container .welcome-text-container h1 {
   font-size: 6em;
 }
 
-.welcome .welcome-text-container h2 {
+.welcome .welcome-content-container .welcome-text-container h2 {
   font-size: 4em;
+  text-align: left;
 }
 
-.welcome .welcome-text-container h1,
-.welcome .welcome-text-container h2 {
+.welcome .welcome-content-container .welcome-text-container h1,
+.welcome .welcome-content-container .welcome-text-container h2 {
   color: #fffffe;
+  margin: 0;
 }
 
-.welcome .welcome-text {
+.welcome .welcome-content-container .welcome-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -44,4 +51,10 @@
   pointer-events: all;
   color: #fffffe;
   text-decoration: none;
+}
+
+.welcome .welcome-content-container .talk-photo {
+  height: 50%;
+  border-radius: 50%;
+  margin: 10px;
 }
