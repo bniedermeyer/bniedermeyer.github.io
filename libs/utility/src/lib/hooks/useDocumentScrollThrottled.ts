@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { throttle } from 'lodash';
 
 // taken from https://medium.com/mtholla/create-a-transitioning-header-using-react-hooks-like-mediums-c70ed211f7c9
-export default function useDocumentScrollThrottled(callback) {
+export function useDocumentScrollThrottled(callback) {
   const [, setScrollPosition] = useState(0);
   let previousScrollTop = 0;
 

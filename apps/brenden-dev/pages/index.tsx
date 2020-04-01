@@ -6,6 +6,7 @@ import { environment } from '../environments/environment';
 import { Info } from '../sections/info/info';
 import { Welcome } from '../sections/welcome/welcome';
 import { Skills } from '../sections/skills/skills';
+import { Navbar } from '@personal-site/components';
 
 export const Index = () => {
   /*
@@ -15,6 +16,7 @@ export const Index = () => {
    */
   return (
     <div className="app">
+      <Navbar />
       <main className="main">
         <section className="welcome">
           <Welcome />
