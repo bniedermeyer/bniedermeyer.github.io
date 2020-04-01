@@ -1,1 +1,1 @@
-export * from './lib/hooks/useDocumentScrollThrottled.hook';
+export * from './lib/hooks/useDocumentScrollThrottled';

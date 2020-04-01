@@ -12,19 +12,22 @@ export interface InfoProps {}
 
 export const Info = (props: InfoProps) => {
   const cards = [
-    <Card url="https://brenden.codes">
+    <Card url="https://brenden.codes" key="blog">
       <Blog className="info-image" />
       <h1>Blog</h1>
     </Card>,
-    <Card url="https://brenden.fyi">
+    <Card url="https://brenden.fyi" key="resume">
       <Resume className="info-image" />
       <h1>Resume</h1>
     </Card>,
-    <Card url="https://github.com/bniedermeyer">
+    <Card url="https://github.com/bniedermeyer" key="projects">
       <Projects className="info-image" />
       <h1>Projects</h1>
     </Card>,
-    <Card url="https://www.youtube.com/playlist?list=PLqn52Dxq8AiW5PU9PPWXPk-YJYS9vsrJ-">
+    <Card
+      url="https://www.youtube.com/playlist?list=PLqn52Dxq8AiW5PU9PPWXPk-YJYS9vsrJ-"
+      key="talks"
+    >
       <Talks className="info-image" />
       <h1>Talks</h1>
     </Card>
