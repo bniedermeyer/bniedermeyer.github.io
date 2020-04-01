@@ -11,12 +11,11 @@ export const Navbar = () => {
 
   useDocumentScrollThrottled(callbackData => {
     const { previousScrollTop, currentScrollTop } = callbackData;
-    const isScrolledDown = previousScrollTop < currentScrollTop;
-    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
 
-    setTimeout(() => {
-      setShouldDisplay(isScrolledDown && isMinimumScrolled);
-    }, TIMEOUT_DELAY);
+    if (previousScrollTop !== currentScrollTop) {
+      const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+      setShouldDisplay(isMinimumScrolled);
+    }
   });
 
   const visible = shouldDisplay ? 'visible' : '';
