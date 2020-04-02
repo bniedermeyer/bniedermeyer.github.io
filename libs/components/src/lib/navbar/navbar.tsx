@@ -7,7 +7,6 @@ export const Navbar = () => {
   const [shouldDisplay, setShouldDisplay] = useState(false);
 
   const MINIMUM_SCROLL = 400;
-  const TIMEOUT_DELAY = 100;
 
   useDocumentScrollThrottled(callbackData => {
     const { previousScrollTop, currentScrollTop } = callbackData;
