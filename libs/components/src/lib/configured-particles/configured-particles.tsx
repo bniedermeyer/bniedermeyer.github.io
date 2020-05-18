@@ -1,5 +1,10 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+import Particles, {
+  IParticlesParams,
+  InteractivityDetect,
+  OutMode,
+  MoveDirection
+} from 'react-particles-js';
 
 import './configured-particles.css';
 
@@ -9,7 +14,7 @@ export interface ConfiguredParticlesProps {
   width: string;
 }
 
-const config = {
+const config: IParticlesParams = {
   particles: {
     number: {
       value: 80,
@@ -66,10 +71,10 @@ const config = {
     move: {
       enable: true,
       speed: 4,
-      direction: 'none',
+      direction: MoveDirection.none,
       random: false,
       straight: false,
-      out_mode: 'out',
+      out_mode: OutMode.out,
       bounce: false,
       attract: {
         enable: false,
@@ -79,7 +84,7 @@ const config = {
     }
   },
   interactivity: {
-    detect_on: 'canvas',
+    detect_on: InteractivityDetect.canvas,
     events: {
       onhover: {
         enable: false,
@@ -119,8 +124,13 @@ const config = {
   retina_detect: true
 };
 
-export const ConfiguredParticles = ({ height, width }) => {
-  return <Particles height={height} width={width} params={config} />;
+export const ConfiguredParticles = () => {
+  return (
+    <Particles
+      style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}
+      params={config}
+    />
+  );
 };
 
 export default ConfiguredParticles;

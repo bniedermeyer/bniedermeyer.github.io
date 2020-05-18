@@ -28,7 +28,7 @@ export const Welcome = () => {
         </div>
       </div>
 
-      <ConfiguredParticles height={'100vh'} width={'100%'} />
+      <ConfiguredParticles />
     </div>
   );
 };
