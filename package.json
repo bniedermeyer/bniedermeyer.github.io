@@ -36,7 +36,7 @@
     "next": "9.1.5",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-particles-js": "^2.7.1"
+    "react-particles-js": "^3.0.3"
   },
   "devDependencies": {
     "@nrwl/cypress": "9.1.2",
