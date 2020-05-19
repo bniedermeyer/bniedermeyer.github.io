@@ -12,7 +12,12 @@ export const Logo = ({ name }) => {
     return null;
   }
   return (
-    <img className="logo" src={`/logos/${name}.png`} alt={`${name} logo`} />
+    <img
+      className="logo"
+      id={`${name}-logo`}
+      src={`/logos/${name}.png`}
+      alt={`${name} logo`}
+    />
   );
 };
 

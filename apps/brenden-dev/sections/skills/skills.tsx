@@ -9,6 +9,7 @@ export interface SkillsProps {}
 export const Skills = (props: SkillsProps) => {
   return (
     <div className="skills">
+      <h2>I have experience building with</h2>
       <div className="skills-grid">
         <Logo name="angular" />
         <Logo name="react" />

@@ -1,5 +1,6 @@
 .skills {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-self: center;
   width: 100%;
@@ -15,4 +16,14 @@
   width: 100%;
   overflow: hidden;
   padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 0.5fr);
+  }
+
+  #sass-logo {
+    grid-column: span 2;
+  }
 }

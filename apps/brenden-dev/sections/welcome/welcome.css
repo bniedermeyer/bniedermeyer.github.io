@@ -14,6 +14,7 @@
   width: 100%;
   pointer-events: none;
   z-index: 100;
+  margin-left: auto;
 }
 
 .welcome .welcome-content-container .welcome-text-container {
@@ -42,6 +43,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 10px;
+  text-align: justify;
 }
 
 .welcome a {
@@ -54,4 +57,31 @@
   height: 30%;
   border-radius: 50%;
   margin: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .welcome .welcome-content-container {
+    flex-direction: column;
+  }
+
+  .welcome .welcome-content-container .welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome .welcome-content-container .welcome-text-container h1 {
+    font-size: 4em;
+  }
+
+  .welcome .welcome-content-container .welcome-text-container h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .welcome .welcome-content-container .talk-photo {
+    height: 25%;
+    border-radius: 50%;
+    margin: 10px;
+  }
 }

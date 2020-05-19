@@ -28,7 +28,7 @@ export const Info = (props: InfoProps) => {
       url="https://www.youtube.com/playlist?list=PLqn52Dxq8AiW5PU9PPWXPk-YJYS9vsrJ-"
       key="talks"
     >
-      <Talks className="info-image" />
+      <Talks className="info-image" id="talks-img" />
       <h1>Talks</h1>
     </Card>
   ];
