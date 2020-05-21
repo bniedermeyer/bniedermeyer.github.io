@@ -8,6 +8,7 @@ import { Info } from '../sections/info/info';
 import { Welcome } from '../sections/welcome/welcome';
 import { Skills } from '../sections/skills/skills';
 import { Navbar } from '@personal-site/components';
+import { Contact } from '../sections/contact/contact';
 
 export const Index = () => {
   /*
@@ -34,6 +35,9 @@ export const Index = () => {
         </section>
         <section>
           <Skills />
+        </section>
+        <section>
+          <Contact />
         </section>
       </main>
     </div>
