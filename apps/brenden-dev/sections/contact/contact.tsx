@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ReactComponent as Gmail } from '../../assets/gmail.svg';
 import { ReactComponent as LinkedIn } from '../../assets/linkedin.svg';
+import { ReactComponent as Twitter } from '../../assets/twitter.svg';
 import './contact.css';
 
 /* eslint-disable-next-line */
@@ -25,6 +26,13 @@ export const Contact = (props: ContactProps) => {
           id="linkedin-link"
         >
           <LinkedIn className="contact-img" id="linkedin-logo" />
+        </a>
+        <a
+          href="https://twitter.com/thenieds"
+          className="contact-link"
+          id="twitter-link"
+        >
+          <Twitter className="contact-img" id="twitter-logo" />
         </a>
       </div>
     </div>
