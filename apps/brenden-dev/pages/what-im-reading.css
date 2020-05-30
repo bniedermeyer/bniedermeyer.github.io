@@ -1,0 +1,27 @@
+.what-im-reading {
+  /* margin: 0; */
+  padding: 0;
+  font-family: sans-serif;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.what-im-reading .intro {
+  padding: 10%;
+  background-color: #232946;
+  color: white;
+}
+
+.what-im-reading .intro h1 {
+  font-size: 3em;
+}
+
+.what-im-reading .intro .book-icon {
+  height: 200px;
+}
+
+.what-im-reading .links {
+  /* height: 600px; */
+  padding: 15%;
+  background-color: #d4d8f0;
+}

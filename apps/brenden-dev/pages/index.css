@@ -19,10 +19,26 @@ body {
   list-style: none;
 }
 
-.app .flex {
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .app header {
@@ -51,13 +67,14 @@ body {
   font-size: 2em;
 }
 
-.app .hover-shadow {
+.hover-shadow {
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.38);
   box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.38);
 }
-.app .hover-shadow:hover {
+
+.hover-shadow:hover {
   -webkit-box-shadow: 0px 0px 54px 2px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 0px 54px 2px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 0px 54px 2px rgba(0, 0, 0, 0.7);

@@ -3,6 +3,12 @@
   padding: 30px 0;
   background-color: #232946;
   color: #b8c1ec;
+  bottom: 0;
+}
+
+.contact h1 {
+  font-size: 3em;
+  text-align: center;
 }
 
 .contact-img {

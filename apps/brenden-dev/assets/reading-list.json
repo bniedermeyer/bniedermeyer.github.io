@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "title": "When Frontend Means Full Stack",
+      "url": "https://increment.com/frontend/when-frontend-means-full-stack/",
+      "img": "https://increment.com/art/13/when-frontend-means-full-stack/cover-2000-7c6735bb.jpeg"
+    },
+    {
+      "title": "Mythos",
+      "url": "https://bookshop.org/books/mythos-the-greek-myths-reimagined/9781452178912",
+      "img": "/mythos-cover.jpg"
+    }
+  ]
+}
