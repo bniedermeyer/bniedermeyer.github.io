@@ -18,21 +18,33 @@ export const Contact = (props: ContactProps) => {
           id="gmail-link"
           className="contact-link"
         >
-          <Gmail className="contact-img" id="gmail-logo" />
+          <Gmail
+            className="contact-img"
+            id="gmail-logo"
+            aria-label="gmail logo"
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/bniedermeyer/"
           className="contact-link"
           id="linkedin-link"
         >
-          <LinkedIn className="contact-img" id="linkedin-logo" />
+          <LinkedIn
+            className="contact-img"
+            id="linkedin-logo"
+            aria-label="linkedin logo"
+          />
         </a>
         <a
           href="https://twitter.com/thenieds"
           className="contact-link"
           id="twitter-link"
         >
-          <Twitter className="contact-img" id="twitter-logo" />
+          <Twitter
+            className="contact-img"
+            id="twitter-logo"
+            aria-label="twitter logo"
+          />
         </a>
       </div>
     </div>
