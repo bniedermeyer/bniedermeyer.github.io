@@ -3,10 +3,7 @@ import React from 'react';
 import './skills.css';
 import { Logo } from '@personal-site/components';
 
-/* eslint-disable-next-line */
-export interface SkillsProps {}
-
-export const Skills = (props: SkillsProps) => {
+export const Skills = () => {
   return (
     <div className="skills">
       <h2>I have experience building with</h2>

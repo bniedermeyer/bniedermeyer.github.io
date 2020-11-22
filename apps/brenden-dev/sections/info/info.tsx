@@ -7,10 +7,7 @@ import { ReactComponent as Projects } from '../../assets/projects.svg';
 import { ReactComponent as Resume } from '../../assets/resume.svg';
 import { ReactComponent as Talks } from '../../assets/talks.svg';
 
-/* eslint-disable-next-line */
-export interface InfoProps {}
-
-export const Info = (props: InfoProps) => {
+export const Info = () => {
   const cards = [
     <Card url="https://brenden.codes" key="blog">
       <Blog className="info-image" />

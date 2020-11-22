@@ -25,7 +25,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/next:dev-server",
+          "builder": "@nrwl/next:server",
           "options": {
             "buildTarget": "brenden-dev:build",
             "dev": true
@@ -44,22 +44,21 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "config": "apps/brenden-dev/.eslintrc",
-            "tsConfig": [
-              "apps/brenden-dev/tsconfig.json",
-              "apps/brenden-dev/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/brenden-dev/**"]
+            "lintFilePatterns": [
+              "apps/brenden-dev/**/*.spec.ts",
+              "apps/brenden-dev/**/*.spec.tsx",
+              "apps/brenden-dev/**/*.spec.js",
+              "apps/brenden-dev/**/*.spec.jsx",
+              "apps/brenden-dev/**/*.d.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/brenden-dev/jest.config.js",
-            "tsConfig": "apps/brenden-dev/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -84,12 +83,12 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "config": "apps/brenden-dev-e2e/.eslintrc",
-            "tsConfig": ["apps/brenden-dev-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/brenden-dev-e2e/**"]
+            "lintFilePatterns": [
+              "apps/brenden-dev-e2e/src/**/*.ts",
+              "apps/brenden-dev-e2e/src/**/*.js"
+            ]
           }
         }
       }
@@ -107,14 +106,13 @@
               "libs/components/tsconfig.lib.json",
               "libs/components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/components/**"]
+            "exclude": ["**/node_modules/**", "!libs/components/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/components/jest.config.js",
-            "tsConfig": "libs/components/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -133,14 +131,13 @@
               "libs/utility/tsconfig.lib.json",
               "libs/utility/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/utility/**"]
+            "exclude": ["**/node_modules/**", "!libs/utility/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utility/jest.config.js",
-            "tsConfig": "libs/utility/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

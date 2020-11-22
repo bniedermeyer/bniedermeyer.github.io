@@ -5,10 +5,7 @@ import { ReactComponent as LinkedIn } from '../../assets/linkedin.svg';
 import { ReactComponent as Twitter } from '../../assets/twitter.svg';
 import './contact.css';
 
-/* eslint-disable-next-line */
-export interface ContactProps {}
-
-export const Contact = (props: ContactProps) => {
+export const Contact = () => {
   return (
     <div className="contact">
       <h1>Let's stay in touch!</h1>

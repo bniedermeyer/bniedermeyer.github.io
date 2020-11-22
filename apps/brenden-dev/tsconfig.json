@@ -1,26 +1,23 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "node",
-      "jest"
-    ],
+    "types": ["node", "jest"],
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
+  "include": [],
+  "exclude": ["node_modules"],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.spec.json"
+    }
   ]
 }
