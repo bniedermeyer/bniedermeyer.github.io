@@ -25,11 +25,8 @@ export const Index = () => {
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
           key="viewport"
         />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-          name="description"
-          content="Homepage for Brenden Niedermeyer - A software developer in Seattle, WA"
-        />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Homepage for Brenden Niedermeyer" />
       </Head>
       <Navbar />
       <main className="main">

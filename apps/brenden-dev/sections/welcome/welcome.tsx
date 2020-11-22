@@ -15,8 +15,8 @@ export const Welcome = () => {
         />
         <div className="welcome-text-container">
           <div className="welcome-text">
-            <h1>Hi! I'm Brenden</h1>
-            <h2>I'm a web developer in Seattle</h2>
+            <h1>Hi! I'm Brenden.</h1>
+            <h2>I'm a web developer.</h2>
             <h3>
               I specialize in building powerful apps with modern web
               technologies. Learn more about me at my{' '}
