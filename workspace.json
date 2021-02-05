@@ -1,170 +1,9 @@
 {
   "version": 1,
-  "projects": {
-    "brenden-dev": {
-      "root": "apps/brenden-dev",
-      "sourceRoot": "apps/brenden-dev",
-      "projectType": "application",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/next:build",
-          "options": {
-            "root": "apps/brenden-dev",
-            "outputPath": "dist/apps/brenden-dev"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/brenden-dev/environments/environment.ts",
-                  "with": "apps/brenden-dev/environments/environment.prod.ts"
-                }
-              ]
-            }
-          },
-          "outputs": [
-            "{options.outputPath}"
-          ]
-        },
-        "serve": {
-          "builder": "@nrwl/next:server",
-          "options": {
-            "buildTarget": "brenden-dev:build",
-            "dev": true
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "brenden-dev:build:production",
-              "dev": false
-            }
-          }
-        },
-        "export": {
-          "builder": "@nrwl/next:export",
-          "options": {
-            "buildTarget": "brenden-dev:build:production"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/brenden-dev/**/*.spec.ts",
-              "apps/brenden-dev/**/*.spec.tsx",
-              "apps/brenden-dev/**/*.spec.js",
-              "apps/brenden-dev/**/*.spec.jsx",
-              "apps/brenden-dev/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/brenden-dev/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/apps/brenden-dev"
-          ]
-        }
-      }
-    },
-    "brenden-dev-e2e": {
-      "root": "apps/brenden-dev-e2e",
-      "sourceRoot": "apps/brenden-dev-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/brenden-dev-e2e/cypress.json",
-            "tsConfig": "apps/brenden-dev-e2e/tsconfig.e2e.json",
-            "devServerTarget": "brenden-dev:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "brenden-dev:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/brenden-dev-e2e/src/**/*.ts",
-              "apps/brenden-dev-e2e/src/**/*.js"
-            ]
-          }
-        }
-      }
-    },
-    "components": {
-      "root": "libs/components",
-      "sourceRoot": "libs/components/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/components/tsconfig.lib.json",
-              "libs/components/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/components/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/components/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/components"
-          ]
-        }
-      }
-    },
-    "utility": {
-      "root": "libs/utility",
-      "sourceRoot": "libs/utility/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/utility/tsconfig.lib.json",
-              "libs/utility/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/utility/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/utility/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/utility"
-          ]
-        }
-      }
-    }
-  },
   "cli": {
     "defaultCollection": "@nrwl/next"
   },
+  "defaultProject": "brenden-dev",
   "schematics": {
     "@nrwl/workspace": {
       "library": {
@@ -220,5 +59,216 @@
       }
     }
   },
-  "defaultProject": "brenden-dev"
+  "projects": {
+    "brenden-dev": {
+      "root": "apps/brenden-dev",
+      "sourceRoot": "apps/brenden-dev",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/brenden-dev",
+            "outputPath": "dist/apps/brenden-dev"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/brenden-dev/environments/environment.ts",
+                  "with": "apps/brenden-dev/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "brenden-dev:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "brenden-dev:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "brenden-dev:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/brenden-dev/**/*.spec.ts",
+              "apps/brenden-dev/**/*.spec.tsx",
+              "apps/brenden-dev/**/*.spec.js",
+              "apps/brenden-dev/**/*.spec.jsx",
+              "apps/brenden-dev/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/brenden-dev/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/brenden-dev"]
+        }
+      }
+    },
+    "brenden-dev-e2e": {
+      "root": "apps/brenden-dev-e2e",
+      "sourceRoot": "apps/brenden-dev-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/brenden-dev-e2e/cypress.json",
+            "tsConfig": "apps/brenden-dev-e2e/tsconfig.e2e.json",
+            "devServerTarget": "brenden-dev:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "brenden-dev:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/brenden-dev-e2e/src/**/*.ts",
+              "apps/brenden-dev-e2e/src/**/*.js"
+            ]
+          }
+        }
+      }
+    },
+    "components": {
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/components/tsconfig.lib.json",
+              "libs/components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/components/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/components/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/components"]
+        }
+      }
+    },
+    "utility": {
+      "root": "libs/utility",
+      "sourceRoot": "libs/utility/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utility/tsconfig.lib.json",
+              "libs/utility/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/utility/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/utility/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/utility"]
+        }
+      }
+    },
+    "storyblok": {
+      "root": "libs/storyblok",
+      "sourceRoot": "libs/storyblok/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/storyblok/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/storyblok"],
+          "options": {
+            "jestConfig": "libs/storyblok/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "brenden-codes": {
+      "root": "apps/brenden-codes",
+      "sourceRoot": "apps/brenden-codes",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/brenden-codes",
+            "outputPath": "dist/apps/brenden-codes"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "brenden-codes:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "brenden-codes:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "brenden-codes:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/brenden-codes/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    }
+  }
 }
