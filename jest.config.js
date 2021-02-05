@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/brenden-dev',
     '<rootDir>/libs/components',
     '<rootDir>/libs/utility',
+    '<rootDir>/libs/storyblok',
   ],
 };
