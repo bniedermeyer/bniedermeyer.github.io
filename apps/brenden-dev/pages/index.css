@@ -2,29 +2,6 @@
  * Remove template code below
  */
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
-.app {
-  font-family: sans-serif;
-  min-width: 100%;
-  max-width: 100%;
-  padding: 0;
-}
-
-.app .no-list-style {
-  list-style: none;
-}
-
-.app .flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .app header {
   background-color: #143055;
   color: white;

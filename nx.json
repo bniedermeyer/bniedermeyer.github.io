@@ -1,5 +1,4 @@
 {
-  "npmScope": "personal-site",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {
@@ -10,6 +9,18 @@
     "nx.json": "*",
     "tsconfig.base.json": "*",
     ".eslintrc.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "personal-site",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
   },
   "projects": {
     "brenden-dev": {
@@ -24,17 +35,12 @@
     },
     "utility": {
       "tags": []
+    },
+    "storyblok": {
+      "tags": []
+    },
+    "brenden-codes": {
+      "tags": []
     }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  },
-  "affected": {
-    "defaultBase": "master"
   }
 }
