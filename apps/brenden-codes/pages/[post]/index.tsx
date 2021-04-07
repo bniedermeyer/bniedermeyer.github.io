@@ -46,6 +46,8 @@ const Post = ({ story }: PostProps) => {
 
         {/* <!-- COMMON TAGS --> */}
         <link rel="canonical" href={`https://brenden.codes/${slug}`} />
+        <meta key="robots" name="robots" content="index,follow,noimageindex" />
+        <meta name="author" content="Brenden Niedermeyer" />
         <meta
           name="keywords"
           content={tag_list.concat(['Brenden Niedermeyer']).join(',')}

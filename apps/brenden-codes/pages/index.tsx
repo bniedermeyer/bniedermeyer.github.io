@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { Storyblok } from '@personal-site/storyblok';
 import { StoriesParams } from 'storyblok-js-client';
 import { PostList } from '../components/PostList';
@@ -19,6 +20,9 @@ const Blog = ({ story, posts }: Props) => {
   const { filename: image } = picture;
   return (
     <>
+      <Head>
+        <meta key="robots" name="robots" content="index,follow,noimageindex" />
+      </Head>
       <div className="flex flex-col md:flex-row">
         <MenuBar imgUrl={image} links={links} />
         <section className="blog container p-4 md:p-20">
