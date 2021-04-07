@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 import { Info } from '../sections/info/info';
 import { Welcome } from '../sections/welcome/welcome';
 import { Skills } from '../sections/skills/skills';
-import { Navbar } from '@personal-site/components';
+import { Navbar } from '../components/navbar/navbar';
 import { Contact } from '../sections/contact/contact';
 
 export const Index = () => {

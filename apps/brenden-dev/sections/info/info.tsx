@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './info.css';
-import { Card } from '@personal-site/components';
+import { Card } from '../../components/card/card';
 import { ReactComponent as Blog } from '../../assets/blog.svg';
 import { ReactComponent as Projects } from '../../assets/projects.svg';
 import { ReactComponent as Resume } from '../../assets/resume.svg';
@@ -27,7 +27,7 @@ export const Info = () => {
     >
       <Talks className="info-image" id="talks-img" />
       <h1>Talks</h1>
-    </Card>
+    </Card>,
   ];
   return (
     <div className="info" id="info">

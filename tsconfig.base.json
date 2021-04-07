@@ -16,7 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@personal-site/components": ["libs/components/src/index.ts"],
       "@personal-site/utility": ["libs/utility/src/index.ts"],
       "@personal-site/storyblok": ["libs/storyblok/src/index.ts"]
     }

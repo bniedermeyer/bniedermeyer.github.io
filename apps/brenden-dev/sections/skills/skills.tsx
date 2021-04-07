@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './skills.css';
-import { Logo } from '@personal-site/components';
+import { Logo } from '../../components/logo/logo';
 
 export const Skills = () => {
   return (
