@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconName } from '@fortawesome/fontawesome-common-types';
+import { Image } from '@personal-site/image';
 
 interface Props {
   imgUrl: string;
@@ -11,11 +12,16 @@ export const MenuBar = ({ imgUrl, links }: Props) => {
   return (
     <nav className="md:h-screen p-4">
       <div className="nav-content flex md:flex-col items-center justify-items-center p-4">
-        <img
-          src={imgUrl}
+        <Image
+          imageUrl={imgUrl}
           alt="Brenden"
           className="hidden md:block rounded-full w-40 border-solid border-2 border-gray-300"
         />
+        {/* <img
+          src={imgUrl}
+          alt="Brenden"
+          className="hidden md:block rounded-full w-40 border-solid border-2 border-gray-300"
+        /> */}
         <h1 className="font-bold dark:text-gray-200 text-md text-left md:text-center md:text-xl md:mt-5">
           Brenden Niedermeyer
         </h1>

@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/components',
     '<rootDir>/libs/utility',
     '<rootDir>/libs/storyblok',
+    '<rootDir>/libs/image',
   ],
 };
