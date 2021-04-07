@@ -17,11 +17,6 @@ export const MenuBar = ({ imgUrl, links }: Props) => {
           alt="Brenden"
           className="hidden md:block rounded-full w-40 border-solid border-2 border-gray-300"
         />
-        {/* <img
-          src={imgUrl}
-          alt="Brenden"
-          className="hidden md:block rounded-full w-40 border-solid border-2 border-gray-300"
-        /> */}
         <h1 className="font-bold dark:text-gray-200 text-md text-left md:text-center md:text-xl md:mt-5">
           Brenden Niedermeyer
         </h1>
