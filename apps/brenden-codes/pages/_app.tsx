@@ -14,7 +14,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to brenden-codes!</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="app bg-gray-100 dark:bg-gray-800 min-h-screen relative">
+      <div className="app min-h-screen relative">
         <main>
           <Component {...pageProps} />
         </main>
