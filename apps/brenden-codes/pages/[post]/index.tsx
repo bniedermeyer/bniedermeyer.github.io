@@ -107,7 +107,7 @@ const Post = ({ story }: PostProps) => {
                 try {
                   await nav.share({
                     url:
-                      process.env.NODE_ENV === 'production'
+                      process.env.CONTEXT === 'production'
                         ? `https://brenden.codes/${slug}`
                         : `http://localhost:4200/${slug}`,
                   });

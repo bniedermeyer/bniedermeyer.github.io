@@ -72,7 +72,7 @@ export const getStaticProps = async (context) => {
     return { date, title, intro, link, tags };
   });
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.CONTEXT === 'production') {
     generateRSS(posts);
     generateSitemap(posts);
   }
