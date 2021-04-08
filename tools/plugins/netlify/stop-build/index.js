@@ -1,5 +1,8 @@
 module.exports = {
   onPreBuild: ({ utils }) => {
+    if (process.env.FORCE_DEPLOY || process.env.INCOMING_HOOK_TITLE) {
+      return;
+    }
     const currentProject = process.env.PROJECT_NAME;
     const lastDeployedCommit = process.env.CACHED_COMMIT_REF;
     const latestCommit = 'HEAD';
