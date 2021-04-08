@@ -106,9 +106,10 @@ const Post = ({ story }: PostProps) => {
               onClick={async () => {
                 try {
                   await nav.share({
-                    url: process.env.NETLIFY
-                      ? `https://brenden.codes/${slug}`
-                      : `http://localhost:4200/${slug}`,
+                    url:
+                      process.env.NEXT_PUBLIC_ENV === 'production'
+                        ? `https://brenden.codes/${slug}`
+                        : `http://localhost:4200/${slug}`,
                   });
                 } catch (error) {
                   console.log('link sharing cancelled');
