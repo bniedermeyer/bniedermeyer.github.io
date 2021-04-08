@@ -7,7 +7,7 @@
     "tsconfig.base.json": "*",
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": { "defaultBase": "main" },
   "npmScope": "personal-site",
   "tasksRunnerOptions": {
     "default": {
