@@ -82,7 +82,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/next:server",
@@ -121,7 +123,9 @@
             "jestConfig": "apps/brenden-dev/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/brenden-dev"]
+          "outputs": [
+            "coverage/apps/brenden-dev"
+          ]
         }
       }
     },
@@ -167,7 +171,10 @@
               "libs/utility/tsconfig.lib.json",
               "libs/utility/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/utility/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/utility/**/*"
+            ]
           }
         },
         "test": {
@@ -176,7 +183,9 @@
             "jestConfig": "libs/utility/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/utility"]
+          "outputs": [
+            "coverage/libs/utility"
+          ]
         }
       }
     },
@@ -188,12 +197,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/storyblok/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/storyblok/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/storyblok"],
+          "outputs": [
+            "coverage/libs/storyblok"
+          ],
           "options": {
             "jestConfig": "libs/storyblok/jest.config.js",
             "passWithNoTests": true
@@ -208,7 +221,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/brenden-codes",
             "outputPath": "dist/apps/brenden-codes"
@@ -239,7 +254,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/brenden-codes/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/brenden-codes/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         }
       }
@@ -252,12 +269,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/image/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/image/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/image"],
+          "outputs": [
+            "coverage/libs/image"
+          ],
           "options": {
             "jestConfig": "libs/image/jest.config.js",
             "passWithNoTests": true
