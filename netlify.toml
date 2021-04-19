@@ -1,2 +1,9 @@
 [[plugins]]
  package = "./tools/plugins/netlify/stop-build"
+
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # opt out of FLOC
+    Permissions-Policy = "interest-cohort=()"
