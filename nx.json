@@ -17,10 +17,10 @@
   },
   "projects": {
     "brenden-dev": { "tags": [] },
-    "brenden-dev-e2e": { "tags": [], "implicitDependencies": ["brenden-dev"] },
     "utility": { "tags": [] },
     "storyblok": { "tags": [] },
     "brenden-codes": { "tags": [] },
-    "image": { "tags": [] }
+    "image": { "tags": [] },
+    "brenden-fyi": { "tags": [] }
   }
 }

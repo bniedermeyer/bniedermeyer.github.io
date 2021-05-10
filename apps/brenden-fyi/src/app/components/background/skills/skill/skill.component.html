@@ -1,0 +1,9 @@
+<li class="p-3">
+  <mat-divider [inset]="true" class=""></mat-divider>
+  <p class="text-xl mt-4">{{ skill.name }}</p>
+  <ul class="list-none flex flex-wrap items-center">
+    <app-list-pill *ngFor="let highlight of skill.highlights">
+      {{ highlight.value }}
+    </app-list-pill>
+  </ul>
+</li>

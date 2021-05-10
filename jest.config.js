@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/utility',
     '<rootDir>/libs/storyblok',
     '<rootDir>/libs/image',
+    '<rootDir>/apps/brenden-fyi',
   ],
 };

@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav bg-gray-500"
+    fixedInViewport
+    [position]="(isHandset$ | async) ? 'start' : 'end'"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <div
+      class="h-full flex flex-col justify-center items-center text-white text-xl"
+    >
+      <a href="https://brenden.dev">Home</a>
+      <a href="https://brenden.codes" class="m-8">Blog</a>
+      <a href="https://github.com/bniedermeyer">GitHub</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar
+      class="bg-gray-500 sticky top-0 z-10 shadow-lg"
+      *ngIf="isHandset$ | async"
+    >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon" class="text-white"
+          >menu</mat-icon
+        >
+      </button>
+      <p class="text-2xl text-white">Brenden Niedermeyer</p>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <section class="flex flex-col md:flex-row">
+      <app-info-card
+        class="flex-grow md:flex-none m-2"
+        [resume]="resume$ | async"
+      ></app-info-card>
+      <app-background
+        class="m-2 flex-grow"
+        [resume]="resume$ | async"
+      ></app-background>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

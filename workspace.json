@@ -57,6 +57,20 @@
       "library": {
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "projects": {
@@ -122,35 +136,6 @@
             "passWithNoTests": true
           },
           "outputs": ["coverage/apps/brenden-dev"]
-        }
-      }
-    },
-    "brenden-dev-e2e": {
-      "root": "apps/brenden-dev-e2e",
-      "sourceRoot": "apps/brenden-dev-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/brenden-dev-e2e/cypress.json",
-            "tsConfig": "apps/brenden-dev-e2e/tsconfig.e2e.json",
-            "devServerTarget": "brenden-dev:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "brenden-dev:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/brenden-dev-e2e/src/**/*.ts",
-              "apps/brenden-dev-e2e/src/**/*.js"
-            ]
-          }
         }
       }
     },
@@ -261,6 +246,109 @@
           "options": {
             "jestConfig": "libs/image/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "brenden-fyi": {
+      "projectType": "application",
+      "root": "apps/brenden-fyi",
+      "sourceRoot": "apps/brenden-fyi/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/brenden-fyi",
+            "index": "apps/brenden-fyi/src/index.html",
+            "main": "apps/brenden-fyi/src/main.ts",
+            "polyfills": "apps/brenden-fyi/src/polyfills.ts",
+            "tsConfig": "apps/brenden-fyi/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/brenden-fyi/src/favicon.ico",
+              "apps/brenden-fyi/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/brenden-fyi/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/brenden-fyi/src/environments/environment.ts",
+                  "with": "apps/brenden-fyi/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "6mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "brenden-fyi:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "brenden-fyi:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "brenden-fyi:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/brenden-fyi/src/**/*.ts",
+              "apps/brenden-fyi/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/brenden-fyi"],
+          "options": {
+            "jestConfig": "apps/brenden-fyi/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "static-render": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "parallel": false,
+            "commands": [
+              "npm run brenden-fyi:postinstall",
+              "npx ts-node ./apps/brenden-fyi/setEnv.ts --environment prod",
+              "npx nx build brenden-fyi --prod",
+              "npx scully --project brenden-fyi"
+            ]
           }
         }
       }
