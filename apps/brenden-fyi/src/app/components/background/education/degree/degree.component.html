@@ -1,0 +1,14 @@
+<li class="p-3">
+  <mat-divider inset></mat-divider>
+  <h3 class="text-xl mt-4">{{ degree.degree }}</h3>
+  <p class="text-l text-blue-400 italic">{{ degree.name }}</p>
+  <p>
+    {{ degree.dateStart | date: 'MMMM yyyy' }} -
+    {{ degree.dateEnd | date: 'MMMM yyyy' }}
+  </p>
+  <ul class="no-list flex flex-wrap items-center" *ngIf="degree.minors">
+    <app-list-pill *ngFor="let minor of degree.minors">
+      {{ minor.value }}
+    </app-list-pill>
+  </ul>
+</li>

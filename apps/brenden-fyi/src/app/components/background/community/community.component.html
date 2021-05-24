@@ -1,0 +1,14 @@
+<app-background-section icon="groups" title="Community"
+  ><ul class="list-none">
+    <ng-container *ngFor="let position of positions">
+      <app-job
+        [current]="position.current"
+        [title]="position.title"
+        [company]="position.company"
+        [dateStart]="position.dateStart"
+        [dateEnd]="position.dateEnd"
+        [description]="position.description"
+        [highlights]="position.highlights"
+      ></app-job>
+    </ng-container></ul
+></app-background-section>
