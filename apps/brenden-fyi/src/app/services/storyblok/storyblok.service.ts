@@ -33,7 +33,7 @@ export class StoryblokService {
       map((result) => result.data),
       map((data) => data.story),
       map((story) => story.content),
-      tap((story) => console.log(story)),
+      // tap((story) => console.log(story)),
       share()
     );
   }
