@@ -8,7 +8,7 @@ export const Navbar = () => {
 
   const MINIMUM_SCROLL = 400;
 
-  useDocumentScrollThrottled(callbackData => {
+  useDocumentScrollThrottled((callbackData) => {
     const { previousScrollTop, currentScrollTop } = callbackData;
 
     if (previousScrollTop !== currentScrollTop) {

@@ -16,9 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@personal-site/utility": ["libs/utility/src/index.ts"],
+      "@personal-site/image": ["libs/image/src/index.ts"],
       "@personal-site/storyblok": ["libs/storyblok/src/index.ts"],
-      "@personal-site/image": ["libs/image/src/index.ts"]
+      "@personal-site/utility": ["libs/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

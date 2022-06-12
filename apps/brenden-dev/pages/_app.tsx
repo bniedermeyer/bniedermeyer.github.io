@@ -1,9 +1,19 @@
-import '../styles.css';
-import React from 'react';
-import type { AppProps /*, AppContext */ } from 'next/app';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import './styles.css';
+import 'tailwindcss/tailwind.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function CustomApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>Welcome to brenden-dev!</title>
+      </Head>
+      <main className="app">
+        <Component {...pageProps} />
+      </main>
+    </>
+  );
 }
 
-export default MyApp;
+export default CustomApp;

@@ -1,12 +1,11 @@
+const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
+
 module.exports = {
-  purge: {
-    enabled: process.env.CONTEXT === 'production',
-    content: [
-      './apps/**/pages/**/*.{js,ts,jsx,tsx}',
-      './apps/**/components/**/*.{js,ts,jsx,tsx}',
-    ],
-  },
-  darkMode: 'media', // or 'media' or 'class'
+  content: [
+    './apps/brenden-codes/pages/**/*.{js,ts,jsx,tsx}',
+    './apps/brenden-codes/components/**/*.{js,ts,jsx,tsx}',
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
   theme: {
     extend: {
       typography: (theme) => ({
@@ -62,11 +61,6 @@ module.exports = {
     },
     container: {
       center: true,
-    },
-  },
-  variants: {
-    extend: {
-      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],

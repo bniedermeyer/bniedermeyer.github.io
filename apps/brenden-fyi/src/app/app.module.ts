@@ -12,7 +12,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
     BrowserAnimationsModule,
     ComponentsModule,
     ScullyLibModule,
