@@ -1,0 +1,55 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/brenden-dev",
+  "projectType": "application",
+  "implicitDependencies": ["react-components"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/brenden-dev",
+        "outputPath": "dist/apps/brenden-dev"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/brenden-dev"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "brenden-dev:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "brenden-dev:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "brenden-dev:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "brenden-dev:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/brenden-dev/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

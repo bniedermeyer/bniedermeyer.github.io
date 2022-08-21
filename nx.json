@@ -1,26 +1,42 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "bniedermeyer.github.io",
+  "affected": {
+    "defaultBase": "main"
+  },
   "implicitDependencies": {
-    "workspace.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
-    "tslint.json": "*",
-    "nx.json": "*",
-    "tsconfig.base.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "main" },
-  "npmScope": "personal-site",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "YjZkNDA3ZmYtZWVjZC00N2I5LTkzOGYtNThjMTg1OTVkNDg5fHJlYWQtd3JpdGU="
+      }
     }
   },
-  "projects": {
-    "brenden-dev": { "tags": [] },
-    "utility": { "tags": [] },
-    "storyblok": { "tags": [] },
-    "brenden-codes": { "tags": [] },
-    "image": { "tags": [] },
-    "brenden-fyi": { "tags": [] }
-  }
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "brenden-dev"
 }

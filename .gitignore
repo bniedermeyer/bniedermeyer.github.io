@@ -6,7 +6,7 @@
 /out-tsc
 
 # dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
 /.idea
@@ -33,11 +33,10 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-scully.log
-**/environments/environment.ts
-**/environments/environment.prod.ts
 
 # System Files
 .DS_Store
 Thumbs.db
-*.env
+
+# Next.js
+.next
