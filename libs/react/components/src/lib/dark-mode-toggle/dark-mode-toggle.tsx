@@ -16,7 +16,6 @@ export function DarkModeToggle(props: DarkModeToggleProps) {
     }
   }, []);
   const toggleDarkMode = () => {
-    console.log('toggling');
     if (
       localStorage['theme'] === 'dark' ||
       (!('theme' in localStorage) &&
