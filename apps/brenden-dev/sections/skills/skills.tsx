@@ -17,7 +17,11 @@ export function Skills(props: SkillsProps) {
           <Image src="/logos/angular.png" alt="Angular" layout="fill" />
         </div>
         <div className="relative aspect-square h-40">
-          <Image src="/logos/rxjs.png" alt="rxjs" layout="fill" />
+          <Image
+            src="/logos/webcomponents.svg"
+            alt="web components"
+            layout="fill"
+          />
         </div>
         <div className="relative aspect-square h-40">
           <Image src="/logos/typescript.png" alt="typescript" layout="fill" />
@@ -26,13 +30,22 @@ export function Skills(props: SkillsProps) {
           <Image src="/logos/nodejs.png" alt="nodejs" layout="fill" />
         </div>
         <div className="relative aspect-square h-40">
-          <Image src="/logos/kubernetes.png" alt="kubernetes" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
-          <Image src="/logos/google.png" alt="google" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
           <Image src="/logos/html5.png" alt="html5" layout="fill" />
+        </div>
+        <div className="relative aspect-square h-40">
+          <Image src="/logos/rxjs.png" alt="rxjs" layout="fill" />
+        </div>
+        <div className="relative aspect-square h-40">
+          <Image src="/logos/google.png" alt="google cloud" layout="fill" />
+        </div>
+        <div className="relative aspect-square h-40">
+          <Image src="/logos/aws.png" alt="aws" layout="fill" />
+        </div>
+        <div className="relative aspect-square h-40">
+          <Image src="/logos/terraform.png" alt="terraform" layout="fill" />
+        </div>
+        <div className="relative aspect-square h-40">
+          <Image src="/logos/kubernetes.png" alt="kubernetes" layout="fill" />
         </div>
         <div className="relative aspect-square h-40">
           <Image src="/logos/sass.png" alt="sass" layout="fill" />

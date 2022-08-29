@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { Navbar } from '@libs/react/components';
+import { Navbar, Banner } from '@libs/react/components';
 import Head from 'next/head';
 import Script from 'next/script';
 import './styles.css';
@@ -26,6 +26,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           }}
         />
         <Navbar />
+        <Banner />
         <Component {...pageProps} />
       </main>
     </>
