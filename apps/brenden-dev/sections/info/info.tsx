@@ -11,19 +11,39 @@ export function Info(props: InfoProps) {
       id="info"
     >
       <Card title="Resume" url="https://brenden.fyi">
-        <Image src="/resume.svg" alt="Resume" height={150} width={300} />
+        <Image
+          src="/resume.svg"
+          alt="Illustrated Resume"
+          height={150}
+          width={300}
+        />
       </Card>
       <Card title="Blog" url="https://brenden.codes">
-        <Image src="/blog.svg" alt="Blog" height={150} width={300} />
+        <Image
+          src="/blog.svg"
+          alt="Illustrated document"
+          height={150}
+          width={300}
+        />
       </Card>
       <Card
         title="Talks"
         url="https://www.youtube.com/playlist?list=PLqn52Dxq8AiW5PU9PPWXPk-YJYS9vsrJ-"
       >
-        <Image src="/talks.svg" alt="Talks" height={150} width={300} />
+        <Image
+          src="/talks.svg"
+          alt="Illustrated Talks"
+          height={150}
+          width={300}
+        />
       </Card>
       <Card title="Projects" url="https://github.com/bniedermeyer">
-        <Image src="/projects.svg" alt="Projects" height={150} width={300} />
+        <Image
+          src="/projects.svg"
+          alt="Illustrated construction site"
+          height={150}
+          width={300}
+        />
       </Card>
     </section>
   );
