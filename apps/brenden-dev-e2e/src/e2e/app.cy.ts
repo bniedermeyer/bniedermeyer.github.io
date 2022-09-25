@@ -1,13 +1,9 @@
-import { getGreeting } from '../support/app.po';
-
 describe('brenden-dev', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome brenden-dev');
+  it('should show the full header on scroll', () => {
+    cy.get('header a').should('not.be.visible');
+    cy.scrollTo(0, 400);
+    cy.get('header a').should('be.visible');
   });
 });

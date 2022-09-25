@@ -29,7 +29,7 @@ export function Navbar({ displayFull = true }: NavbarProps) {
           className={`flex items-center ${
             displayFull
               ? 'opacity-100 transition-opacity duration-700 ease-in-out reduce-motion:transition-none'
-              : 'transition-opacity opacity-0'
+              : 'transition-opacity opacity-0 pointer-events-none'
           }`}
         >
           <span className="self-center text-2xl text-primary-dark font-semibold whitespace-nowrap dark:text-secondary-dark">

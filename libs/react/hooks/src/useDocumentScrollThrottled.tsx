@@ -32,5 +32,6 @@ export function useDocumentScrollThrottled(
 
     return () =>
       window.removeEventListener('scroll', handleDocumentScrollThrottled);
-  }, [handleDocumentScrollThrottled]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- we only want this called at mount and unmount
+  }, []);
 }
