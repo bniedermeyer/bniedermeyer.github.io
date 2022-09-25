@@ -1,7 +1,10 @@
-import styles from './skills.module.css';
 import Image from 'next/image';
 /* eslint-disable-next-line */
 export interface SkillsProps {}
+
+const ImageContainer = ({ children }): JSX.Element => {
+  return <div className="relative aspect-square h-40">{children}</div>;
+};
 
 export function Skills(props: SkillsProps) {
   return (
@@ -10,46 +13,46 @@ export function Skills(props: SkillsProps) {
         I have experience building with
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8 dark:invert place-items-center">
-        <div className="relative aspect-square h-40">
+        <ImageContainer>
           <Image src="/logos/react.png" alt="React" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/angular.png" alt="Angular" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image
             src="/logos/webcomponents.svg"
             alt="web components"
             layout="fill"
           />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/typescript.png" alt="typescript" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/nodejs.png" alt="nodejs" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/html5.png" alt="html5" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/rxjs.png" alt="rxjs" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/google.png" alt="google cloud" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/aws.png" alt="aws" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/terraform.png" alt="terraform" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/kubernetes.png" alt="kubernetes" layout="fill" />
-        </div>
-        <div className="relative aspect-square h-40">
+        </ImageContainer>
+        <ImageContainer>
           <Image src="/logos/sass.png" alt="sass" layout="fill" />
-        </div>
+        </ImageContainer>
       </div>
     </section>
   );

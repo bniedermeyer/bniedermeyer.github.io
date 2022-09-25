@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { Navbar, Banner } from '@libs/react/components';
+import { Banner } from '@libs/react/components';
 import Head from 'next/head';
 import Script from 'next/script';
 import './styles.css';
@@ -10,7 +10,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to brenden-dev!</title>
       </Head>
-      <main className="app bg-primary-light dark:bg-primary-dark">
+      <main className="app transition-colors ease-in-out duration-300 bg-primary-light dark:bg-primary-dark">
         <Script
           id="dark-mode-script"
           dangerouslySetInnerHTML={{
@@ -25,7 +25,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
             `,
           }}
         />
-        <Navbar />
         <Banner />
         <Component {...pageProps} />
       </main>

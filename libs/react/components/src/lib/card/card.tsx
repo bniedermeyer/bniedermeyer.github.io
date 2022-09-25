@@ -1,5 +1,3 @@
-import styles from './card.module.css';
-
 /* eslint-disable-next-line */
 export interface CardProps {
   url?: string;
@@ -14,7 +12,7 @@ export function Card({ url, title, children }: CardProps) {
         url
           ? 'hover:scale-[1.02] transition-all motion-reduce:transition-none'
           : null
-      } max-w-xs bg-primary dark:bg-primary-light rounded-md drop-shadow-md p-4 m-2`}
+      } max-w-xs bg-primary dark:bg-primary-light rounded-md drop-shadow-md p-4 m-2 transition-colors ease-in-out duration-700`}
     >
       {children && (
         <div className="relative aspect-auto flex flex-col items-center justify-center mb-8">

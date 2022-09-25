@@ -1,5 +1,3 @@
-import styles from './banner.module.css';
-
 /* eslint-disable-next-line */
 export interface BannerProps {}
 

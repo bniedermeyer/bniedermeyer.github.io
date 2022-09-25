@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import speakingImage from '../../assets/speaking.jpg';
-import styles from './intro.module.css';
 
 /* eslint-disable-next-line */
 export interface IntroProps {}

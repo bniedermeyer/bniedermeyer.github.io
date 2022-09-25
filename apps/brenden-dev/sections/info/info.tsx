@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Card } from '@libs/react/components';
-import styles from './info.module.css';
 
 /* eslint-disable-next-line */
 export interface InfoProps {}
