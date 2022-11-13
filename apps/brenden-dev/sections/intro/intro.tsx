@@ -1,13 +1,22 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import speakingImage from '../../assets/speaking.jpg';
+import styles from './intro.module.css';
 
-/* eslint-disable-next-line */
-export interface IntroProps {}
+const backgrounds = ['gears', 'circuit', 'diamonds'];
 
-export function Intro(props: IntroProps) {
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+export function Intro() {
+  const [bgPattern] = useState(
+    backgrounds[randomNumber(0, backgrounds.length)]
+  );
+
   return (
     <section
-      className="w-full h-full flex flex-col items-center justify-center"
+      className={`w-full h-full flex flex-col items-center justify-center ${styles[bgPattern]}`}
       id="intro"
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-8">
@@ -16,33 +25,33 @@ export function Intro(props: IntroProps) {
             src={speakingImage}
             alt="Brenden giving a talk at a meetup"
             layout="fill"
-            className="rounded-full"
+            className="rounded-full shadow-lg"
             placeholder="blur"
             priority
           />
         </div>
         <div className="px-4">
-          <h1 className="text-primary-dark dark:text-primary-light text-center md:text-left text-7xl">
+          <h1 className="text-purple-800 dark:text-primary-light text-center md:text-left text-7xl font-extrabold">
             Hi! I&apos;m Brenden
           </h1>
-          <h2 className="text-primary-dark dark:text-primary-light text-center md:text-left text-4xl">
+          <h2 className="text-purple-800 dark:text-primary-light text-center md:text-left text-4xl">
             I&apos;m a web developer
           </h2>
-          <p className="text-blue-700 dark:text-secondary-dark mt-2 md:mt-0 text-2xl text-justify md:text-left">
+          <p className="text-primary-dark dark:text-cyan-400 mt-2 md:mt-0 text-2xl text-justify md:text-left">
             I specialise in building powerfull apps with modern web{' '}
             <br className="md:hidden" />
             technologies. <br className="hidden md:block" /> Learn more about me
             at my{' '}
             <a
               href="https://brenden.codes"
-              className="text-primary-dark dark:text-secondary-light"
+              className="text-purple-800 dark:text-secondary-light underline decoration-2 decoration-yellow-500"
             >
               blog
             </a>
             , or{' '}
             <a
               href="https://brenden.fyi"
-              className="text-primary-dark dark:text-secondary-light"
+              className="text-purple-800 dark:text-secondary-light underline decoration-2 decoration-emerald-500"
             >
               cv
             </a>
