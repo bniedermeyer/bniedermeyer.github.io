@@ -12,14 +12,10 @@ export function Card({ url, title, children }: CardProps) {
         url
           ? 'hover:scale-[1.02] transition-all motion-reduce:transition-none'
           : null
-      } max-w-xs bg-primary dark:bg-primary-light rounded-md drop-shadow-md p-4 m-2 transition-colors ease-in-out duration-700`}
+      } max-w-xs bg-primary dark:bg-primary-light rounded-md drop-shadow-md px-4 m-2 transition-colors ease-in-out duration-700 relative flex flex-col items-center justify-center `}
     >
-      {children && (
-        <div className="relative aspect-auto flex flex-col items-center justify-center mb-8">
-          {children}
-        </div>
-      )}
-      <div className="card-content text-center w-full">
+      {children && <div>{children}</div>}
+      <div className="card-content text-center w-full my-8">
         <h1 className="text-primary-light dark:text-primary-dark text-2xl">
           {title}
         </h1>

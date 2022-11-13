@@ -3,6 +3,7 @@ import { Card } from '@libs/react/components';
 
 /* eslint-disable-next-line */
 export interface InfoProps {}
+const imageClass = 'h-52 pt-4 aspect-square';
 
 export function Info(props: InfoProps) {
   return (
@@ -14,7 +15,8 @@ export function Info(props: InfoProps) {
         <Image
           src="/resume.svg"
           alt="Illustrated Resume"
-          height={150}
+          className={imageClass}
+          height={208}
           width={300}
         />
       </Card>
@@ -22,7 +24,8 @@ export function Info(props: InfoProps) {
         <Image
           src="/blog.svg"
           alt="Illustrated document"
-          height={150}
+          className={imageClass}
+          height={208}
           width={300}
         />
       </Card>
@@ -33,7 +36,8 @@ export function Info(props: InfoProps) {
         <Image
           src="/talks.svg"
           alt="Illustrated Talks"
-          height={150}
+          className={imageClass}
+          height={208}
           width={300}
         />
       </Card>
@@ -41,7 +45,8 @@ export function Info(props: InfoProps) {
         <Image
           src="/projects.svg"
           alt="Illustrated construction site"
-          height={150}
+          className={imageClass}
+          height={208}
           width={300}
         />
       </Card>

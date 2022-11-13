@@ -11,8 +11,8 @@ const TemplateWithImage: ComponentStory<typeof Card> = (args) => (
   <Card {...args}>
     <img
       src="https://placeimg.com/400/225/arch"
+      className="rounded-t-md object-fill"
       alt="Shoes"
-      className="rounded-xl"
     />
   </Card>
 );

@@ -1,4 +1,5 @@
 {
+  "name": "brenden-dev",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/brenden-dev",
   "projectType": "application",

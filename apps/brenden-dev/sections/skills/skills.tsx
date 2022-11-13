@@ -14,44 +14,40 @@ export function Skills(props: SkillsProps) {
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8 dark:invert place-items-center">
         <ImageContainer>
-          <Image src="/logos/react.png" alt="React" layout="fill" />
+          <Image src="/logos/react.png" alt="React" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/angular.png" alt="Angular" layout="fill" />
+          <Image src="/logos/angular.png" alt="Angular" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image
-            src="/logos/webcomponents.svg"
-            alt="web components"
-            layout="fill"
-          />
+          <Image src="/logos/webcomponents.svg" alt="web components" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/typescript.png" alt="typescript" layout="fill" />
+          <Image src="/logos/typescript.png" alt="typescript" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/nodejs.png" alt="nodejs" layout="fill" />
+          <Image src="/logos/nodejs.png" alt="nodejs" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/html5.png" alt="html5" layout="fill" />
+          <Image src="/logos/html5.png" alt="html5" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/rxjs.png" alt="rxjs" layout="fill" />
+          <Image src="/logos/rxjs.png" alt="rxjs" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/google.png" alt="google cloud" layout="fill" />
+          <Image src="/logos/google.png" alt="google cloud" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/aws.png" alt="aws" layout="fill" />
+          <Image src="/logos/aws.png" alt="aws" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/terraform.png" alt="terraform" layout="fill" />
+          <Image src="/logos/terraform.png" alt="terraform" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/kubernetes.png" alt="kubernetes" layout="fill" />
+          <Image src="/logos/kubernetes.png" alt="kubernetes" fill />
         </ImageContainer>
         <ImageContainer>
-          <Image src="/logos/sass.png" alt="sass" layout="fill" />
+          <Image src="/logos/sass.png" alt="sass" fill />
         </ImageContainer>
       </div>
     </section>

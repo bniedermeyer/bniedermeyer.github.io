@@ -3,7 +3,7 @@ import { nxE2EPreset } from '@nrwl/cypress/plugins/cypress-preset';
 
 export default defineConfig({
   e2e: {
-    ...nxE2EPreset(__dirname),
+    ...nxE2EPreset(__filename),
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setupNodeEvents(on, _config) {
       on('task', {
