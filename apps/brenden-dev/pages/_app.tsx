@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { Banner } from '@libs/react/components';
+import { Banner, Footer } from '@libs/react/components';
 import Head from 'next/head';
 import Script from 'next/script';
 import './styles.css';
@@ -28,6 +28,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <Banner />
         <Component {...pageProps} />
       </main>
+      <Footer />
     </>
   );
 }

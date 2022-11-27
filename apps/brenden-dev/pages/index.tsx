@@ -21,11 +21,9 @@ export function Index() {
   return (
     <>
       <Navbar displayFull={displayNavbar} />
-      <div className="page h-screen">
-        <Intro />
-        <Info />
-        <Skills />
-      </div>
+      <Intro />
+      <Info />
+      <Skills />
     </>
   );
 }
