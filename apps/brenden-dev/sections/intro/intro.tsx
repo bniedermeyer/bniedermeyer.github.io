@@ -24,7 +24,6 @@ export function Intro() {
           <Image
             src={speakingImage}
             alt="Brenden giving a talk at a meetup"
-            layout="fill"
             className="rounded-full shadow-lg"
             placeholder="blur"
             priority

@@ -10,7 +10,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to brenden-dev!</title>
       </Head>
-      <main className="app transition-colors ease-in-out duration-300 bg-gradient-to-r from-sky-800 via-amber-100 to-primary-light dark:from-primary-dark dark:via-cyan-700 dark:to-cyan-800">
+      <main className="app transition ease-in-out duration-300 bg-gradient-to-r from-sky-800 via-amber-100 to-primary-light dark:from-primary-dark dark:via-cyan-700 dark:to-cyan-800">
         <Script
           id="dark-mode-script"
           dangerouslySetInnerHTML={{
