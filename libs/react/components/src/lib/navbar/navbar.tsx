@@ -28,7 +28,7 @@ export function Navbar({ displayFull = true }: NavbarProps) {
           href="https://brenden.dev"
           className={`flex items-center ${
             displayFull
-              ? 'opacity-100 transition-opacity duration-700 ease-in-out reduce-motion:transition-none'
+              ? 'opacity-100 transition-opacity duration-700 ease-in-out reduce-motion:transition-none pl-safe'
               : 'transition-opacity opacity-0 pointer-events-none'
           }`}
         >
