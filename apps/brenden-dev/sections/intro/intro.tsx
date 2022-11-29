@@ -16,7 +16,7 @@ export function Intro() {
 
   return (
     <section
-      className={`w-full h-screen flex flex-col items-center justify-center ${styles[bgPattern]}`}
+      className={`w-full py-20 md:py-0 md:h-screen  flex flex-col items-center justify-center ${styles[bgPattern]}`}
       id="intro"
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-8">
