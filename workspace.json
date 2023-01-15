@@ -2,9 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "angular-components": "libs/angular/components",
     "brenden-dev": "apps/brenden-dev",
     "brenden-dev-e2e": "apps/brenden-dev-e2e",
+    "brenden-fyi": "apps/brenden-fyi",
     "react-components": "libs/react/components",
     "react-hooks": "libs/react/hooks"
-  }
+  },
+  "defaultProject": "brenden-dev"
 }

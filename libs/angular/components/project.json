@@ -1,0 +1,67 @@
+{
+  "name": "angular-components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/angular/components/src",
+  "prefix": "lib",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/angular/components/ng-package.json",
+        "tailwindConfig": "libs/angular/components/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular/components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular/components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular/components/**/*.ts",
+          "libs/angular/components/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/angular/components/.storybook",
+        "browserTarget": "angular-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/angular-components",
+        "configDir": "libs/angular/components/.storybook",
+        "browserTarget": "angular-components:build-storybook",
+        "compodoc": false,
+        "styles": ["apps/brenden-fyi/src/styles.css"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -8,7 +8,13 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ],
         "accessToken": "YjZkNDA3ZmYtZWVjZC00N2I5LTkzOGYtNThjMTg1OTVkNDg5fHJlYWQtd3JpdGU="
       }
     }
@@ -42,6 +48,19 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "none",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "none"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
     }
   },
   "defaultProject": "brenden-dev",
