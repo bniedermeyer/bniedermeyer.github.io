@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'lib-info-card',
   template: `
     <div
-      class="flex w-96 flex-col items-center rounded-md border border-purple-300 bg-white py-12 px-8 shadow-md "
+      class="rounded-md border border-purple-300 bg-white px-16 py-8 shadow-md md:w-96 md:px-8 md:py-12 "
     >
-      <div class="">test</div>
+      <ng-content></ng-content>
     </div>
   `,
 })
