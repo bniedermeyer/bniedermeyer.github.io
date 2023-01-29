@@ -4,7 +4,9 @@
   "projects": {
     "brenden-dev": "apps/brenden-dev",
     "brenden-dev-e2e": "apps/brenden-dev-e2e",
+    "brenden-fyi": "apps/brenden-fyi",
     "react-components": "libs/react/components",
-    "react-hooks": "libs/react/hooks"
+    "react-hooks": "libs/react/hooks",
+    "web-components": "libs/web/components"
   }
 }

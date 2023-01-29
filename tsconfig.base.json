@@ -15,8 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@bniedermeyer.github.io/web/components": [
+        "libs/web/components/src/index.ts"
+      ],
       "@libs/react/components": ["libs/react/components/src/index.ts"],
-      "@libs/react/hooks": ["libs/react/hooks/src/index.ts"]
+      "@libs/react/hooks": ["libs/react/hooks/src/index.ts"],
+      "@libs/web/components": ["libs/web/components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,64 @@
+{
+  "name": "brenden-fyi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/brenden-fyi/src",
+  "tags": ["web-components"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/brenden-fyi",
+        "compiler": "swc",
+        "main": "apps/brenden-fyi/src/main.ts",
+        "tsConfig": "apps/brenden-fyi/tsconfig.app.json",
+        "assets": [
+          "apps/brenden-fyi/src/favicon.ico",
+          "apps/brenden-fyi/src/assets"
+        ],
+        "index": "apps/brenden-fyi/src/index.html",
+        "baseHref": "/",
+        "polyfills": "apps/brenden-fyi/src/polyfills.ts",
+        "styles": ["apps/brenden-fyi/src/styles.css"],
+        "scripts": [],
+        "postcssConfig": "apps/brenden-fyi/postcss.config.js"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/brenden-fyi/src/environments/environment.ts",
+              "with": "apps/brenden-fyi/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "brenden-fyi:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "brenden-fyi:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/brenden-fyi/**/*.ts"]
+      }
+    }
+  }
+}
