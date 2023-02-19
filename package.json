@@ -63,6 +63,7 @@
     "url-loader": "^3.0.0"
   },
   "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
     "@vercel/analytics": "^0.1.6",
     "core-js": "^3.6.5",
     "lodash.throttle": "^4.1.1",

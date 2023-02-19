@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "brenden-fyi": "apps/brenden-fyi",
     "brenden-dev": "apps/brenden-dev",
     "brenden-dev-e2e": "apps/brenden-dev-e2e",
     "react-components": "libs/react/components",

@@ -1,0 +1,18 @@
+{
+  "name": "brenden-fyi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/brenden-fyi",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tailwindcss -i apps/brenden-fyi/src/assets/css/tailwind.css -o apps/brenden-fyi/_site/assets/css/tailwind.css --watch --postcss apps/brenden-fyi/postcss.config.js --config apps/brenden-fyi/tailwind.config.js",
+          "npx @11ty/eleventy --serve --port=4200 --config=apps/brenden-fyi/.eleventy.js "
+        ]
+      }
+    }
+  },
+  "tags": []
+}
