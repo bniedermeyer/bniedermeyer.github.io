@@ -1,0 +1,21 @@
+<section id="skills">
+  <div class="flex items-center justify-center gap-x-2 my-4">
+    {% icon "code", "text-slate-600 dark:text-slate-300", 25 %} <h3 class="text-slate-600 dark:text-slate-300 text-2xl font-semibold">Skills</h3>
+  </div>
+
+  <ul>
+    {% for item in storyblok.story.content.skills %}
+    <li class="dark:text-gray-200 text-slate-900">
+        <h4 class="text-xl font-semibold  dark:text-blue-200">
+          {{item.name}}
+        </h4>
+        <ul class=" flex flex-wrap gap-1 md:gap-2">
+            {% for skill in item.highlights %}
+              <li class="rounded bg-blue-400 border-2 border-solid border-slate-700 px-2 text-sm text-white w-fit" >{{skill.value}}</>
+            {% endfor %}
+        </ul>
+      <hr class="my-2" />
+    </li>
+    {% endfor %}
+  </ul>
+</section>

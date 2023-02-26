@@ -33,6 +33,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+.env
 
 # System Files
 .DS_Store
@@ -43,3 +44,4 @@ Thumbs.db
 
 # 11ty
 _site
+apps/brenden-fyi/.cache

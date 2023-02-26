@@ -12,6 +12,15 @@
           "npx @11ty/eleventy --serve --port=4200 --config=apps/brenden-fyi/.eleventy.js "
         ]
       }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tailwindcss -i apps/brenden-fyi/src/assets/css/tailwind.css -o dist/apps/brenden-fyi/assets/css/tailwind.css --postcss apps/brenden-fyi/postcss.config.js --config apps/brenden-fyi/tailwind.config.js",
+          "npx @11ty/eleventy --output=dist/apps/brenden-fyi --config=apps/brenden-fyi/.eleventy.js "
+        ]
+      }
     }
   },
   "tags": []
