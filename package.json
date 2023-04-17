@@ -45,7 +45,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@nrwl/angular": "^12.2.0",
-    "@panelbear/panelbear-js": "^1.2.0",
     "@scullyio/init": "^1.1.4",
     "@scullyio/ng-lib": "^1.0.0",
     "@scullyio/scully": "^1.0.0",
