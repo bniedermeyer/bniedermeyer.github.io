@@ -14,6 +14,7 @@
     />
     <title>Brenden Niedermeyer</title>
      <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
+    <script defer src="/_vercel/insights/script.js"></script>
   <body class="bg-slate-100 dark:bg-cyan-900">
     {% include "partials/_navigation.njk" %}
     <div class="grid grid-cols-1 md:grid-cols-3">
@@ -23,6 +24,25 @@
     </main>
     </div>
     {% include "partials/_footer.njk" %}
+    <script>
+      window.va = function () {
+        (window.vaq = window.vaq || []).push(arguments);
+      };
+        window.va('beforeSend', (event) => {
+        if (event.url.includes('/private') || localStorage.getItem('va-disable')) {
+          return null;
+        } else if {
+          event.url.includes('secret')
+          const url = new URL(event.url);
+          url.searchParams.delete('secret');
+          return {
+            ...event,
+            url: url.toString(),
+          };
+        }
+        return event;
+      });
+    </script>
   </body>
 </html>
 
