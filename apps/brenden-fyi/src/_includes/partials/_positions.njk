@@ -1,0 +1,38 @@
+<section id="work-experience">
+  <div class="flex items-center justify-center gap-x-2 my-4">
+    {% icon "briefcase", "text-slate-600 dark:text-slate-300", 25 %} <h3 class="text-slate-600 dark:text-slate-300 text-2xl font-semibold">Work Experience</h3>
+  </div>
+
+  <ul>
+    {% for item in storyblok.story.content.positions %}
+    <li class="dark:text-gray-200 text-slate-900">
+        <h4 class="text-xl font-semibold dark:text-blue-200">
+          {{item.title}}
+        </h4>
+        <p class="text-lg text-blue-400 dark:text-yellow-400">{{item.company}}</p>
+        <p class="italic text-sm">{{item.dateStart | formatDate('MMM, yyyy')}} -
+          {% if item.current %}
+            <span class="text-green-400 ">Current</span>
+          {% else %}
+            {{ item.dateEnd | formatDate('MMM, yyyy') }}
+          {% endif %}
+
+        </p>
+        <div class="p-2">
+
+        <p class="">{{ item.description }}</p>
+
+        <figure class="p-2">
+          <figcaption class="font-bold text-xs">Highlights:</figcaption>
+          <ul class="list-disc p-2">
+            {% for highlight in item.highlights %}
+              <li >{{highlight.value}}</>
+            {% endfor %}
+          </ul>
+        </figure>
+        </div>
+      <hr class="mb-2" />
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,24 @@
+<section id="awards">
+  <div class="flex items-center justify-center gap-x-2 my-4">
+    {% icon "award", "text-slate-600 dark:text-slate-300", 25 %} <h3 class="text-slate-600 dark:text-slate-300 text-2xl font-semibold">Awards</h3>
+  </div>
+
+  <ul>
+    {% for item in storyblok.story.content.awards %}
+    <li class="dark:text-gray-200 text-slate-900">
+        <h4 class="text-xl font-semibold dark:text-blue-200">
+          {{item.name}}
+        </h4>
+        <p class="text-lg text-blue-400 dark:text-yellow-400">{{item.awardingOrg}}
+          <span class="text-slate-900 dark:text-gray-200">- {{ item.date | formatDate('MMM, yyyy') }}</span></p>
+        <p class="italic text-sm "></p>
+        <div class="p-2">
+
+        <p class="">{{ item.description }}</p>
+
+        </div>
+      <hr class="mb-2" />
+    </li>
+    {% endfor %}
+  </ul>
+</section>
