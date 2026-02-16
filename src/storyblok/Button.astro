@@ -1,0 +1,9 @@
+---
+import { Button as RetroButton } from '@/components/retroui/Button';
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<RetroButton {...storyblokEditable(blok)} variant={blok.variant} size={blok.size}>
+	{blok.label}
+</RetroButton>

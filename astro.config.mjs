@@ -31,9 +31,9 @@ export default defineConfig({
         },
         components: {
             page: 'storyblok/Page',
+            button: 'storyblok/Button',
             grid: 'storyblok/Grid',
-            feature: 'storyblok/Feature',
-            teaser: 'storyblok/Teaser',
+            section: 'storyblok/Section',
         },
         }), react()],
     output: 'server',

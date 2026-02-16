@@ -4,7 +4,7 @@ import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 ---
 
-<main {...storyblokEditable(blok)}>
+<main class="mx-auto max-w-7xl px-4 py-4" {...storyblokEditable(blok)}>
 	{
 		blok.body?.map((nestedBlok) => {
 			return <StoryblokComponent blok={nestedBlok} />;
