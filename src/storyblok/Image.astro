@@ -1,0 +1,24 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokImage from '@/components/StoryblokImage.astro';
+
+const { blok } = Astro.props;
+const asset = blok.image;
+
+if (!asset?.filename) {
+  return null;
+}
+---
+
+<StoryblokImage
+  src={asset.filename}
+  alt={asset.alt ?? ""}
+  width={blok.width}
+  height={blok.height}
+  layout={blok.layout}
+  quality={blok.quality}
+  focus={asset.focus}
+  loading={blok.loading}
+  class={blok.class}
+  {...storyblokEditable(blok)}
+/>

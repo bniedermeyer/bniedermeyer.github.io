@@ -1,20 +1,21 @@
 import { cn } from "@/lib/utils";
-import { type HTMLAttributes } from "react";
+import { type AnchorHTMLAttributes, type HTMLAttributes } from "react";
 import { Text } from "@/components/retroui/Text";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
+  url?: string;
 }
 
-const Card = ({ className, ...props }: ICardProps) => {
-  return (
-    <div
-      className={cn(
-        "inline-block border-2 rounded shadow-md transition-all hover:shadow-none bg-card",
-        className,
-      )}
-      {...props}
-    />
+const Card = ({ className, url, ...props }: ICardProps) => {
+  const cardClass = cn(
+    "inline-block border-2 rounded shadow-md transition-all hover:shadow-none bg-card",
+    className,
+  );
+  return url ? (
+    <a href={url} className={cardClass} {...(props as unknown as AnchorHTMLAttributes<HTMLAnchorElement>)} />
+  ) : (
+    <div className={cardClass} {...props} />
   );
 };
 

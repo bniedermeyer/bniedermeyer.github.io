@@ -1,0 +1,9 @@
+---
+import { Badge as RetroBadge } from '@/components/retroui/Badge';
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<RetroBadge {...storyblokEditable(blok)} variant={blok.variant} size={blok.size}>
+	{blok.text}
+</RetroBadge>

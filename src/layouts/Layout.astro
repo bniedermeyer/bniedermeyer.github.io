@@ -13,12 +13,13 @@ const currentYear = new Date().getFullYear();
 			rel="stylesheet"
 			href="https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css"
 		/> -->
+		<link rel="preconnect" href="https://a.storyblok.com" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body class="retro-scanlines">
 		<slot />
-		<footer>All rights reserved © {currentYear}</footer>
+		<footer class="text-center text-sm text-muted-foreground bottom-0 absolute w-full">All rights reserved © {currentYear}</footer>
 	</body>
 </html>

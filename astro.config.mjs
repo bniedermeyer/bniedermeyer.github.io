@@ -33,9 +33,15 @@ export default defineConfig({
             page: 'storyblok/Page',
             button: 'storyblok/Button',
             grid: 'storyblok/Grid',
+            grid_item: 'storyblok/GridItem',
             section: 'storyblok/Section',
             text: 'storyblok/Text',
             retro_window: 'storyblok/RetroWindow',
+            image: 'storyblok/Image',
+            retro_image: 'storyblok/RetroImage',
+            badge: 'storyblok/Badge',
+            alert: 'storyblok/Alert',
+            card: 'storyblok/Card',
         },
         }), react()],
     output: 'server',
@@ -46,5 +52,5 @@ export default defineConfig({
     image: {
         domains: ['a.storyblok.com', 'a2.storyblok.com'],
         remotePatterns: [{ protocol: "https" }],
-    }
+    },
 });

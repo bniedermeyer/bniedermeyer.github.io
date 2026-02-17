@@ -1,0 +1,26 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import RetroImageComponent from '@/components/RetroImage.astro';
+
+const { blok } = Astro.props;
+const asset = blok.image;
+
+if (!asset?.filename) {
+  return null;
+}
+---
+
+<RetroImageComponent
+  src={asset.filename}
+  alt={asset.alt ?? ""}
+  label={blok.label}
+  metadata={blok.metadata}
+  width={blok.width}
+  height={blok.height}
+  layout={blok.layout}
+  quality={blok.quality}
+  focus={asset.focus}
+  loading={blok.loading}
+  class={blok.class}
+  {...storyblokEditable(blok)}
+/>

@@ -1,0 +1,40 @@
+---
+import { Card as RetroCard } from '@/components/retroui/Card';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import StoryblokImage from '@/components/StoryblokImage.astro';
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+const hasHeader = blok.title || blok.description;
+const asset = blok.image;
+const hasImage = asset?.filename;
+let url = undefined;
+if (blok.link) {
+	url = blok.link.linktype === 'story' && blok.link.cached_url ? `/${blok.link.cached_url}` : blok.link.url;
+}
+---
+
+<RetroCard url={url} {...storyblokEditable(blok)}>
+	{hasImage && (
+		<RetroCard.Content className="pb-0">
+			<StoryblokImage
+				src={asset.filename}
+				alt={asset.alt ?? ''}
+				layout="full-width"
+				class="w-full h-full object-cover"
+			/>
+		</RetroCard.Content>
+	)}
+	{hasHeader && (
+		<RetroCard.Header className={hasImage ? 'pb-0' : undefined}>
+			{blok.title && <RetroCard.Title>{blok.title}</RetroCard.Title>}
+			{blok.description && <RetroCard.Description>{blok.description}</RetroCard.Description>}
+		</RetroCard.Header>
+	)}
+	<RetroCard.Content>
+		{
+			blok.content?.map((nestedBlok) => (
+				<StoryblokComponent blok={nestedBlok} />
+			))
+		}
+	</RetroCard.Content>
+</RetroCard>

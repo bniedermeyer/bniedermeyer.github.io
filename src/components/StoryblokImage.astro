@@ -1,0 +1,78 @@
+---
+import {
+  applyStoryblokFilters,
+  buildStoryblokImageUrl,
+  getStoryblokAssetDimensions,
+} from '@/lib/storyblok-image';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  layout?: "constrained" | "full-width" | "fixed";
+  focus?: string;
+  quality?: number;
+  loading?: "lazy" | "eager";
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  src,
+  alt,
+  width: propWidth,
+  height: propHeight,
+  layout = "constrained",
+  focus,
+  quality = 80,
+  loading = "lazy",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const hasExplicitWidth = propWidth != null && propWidth > 0;
+const hasExplicitHeight = propHeight != null && propHeight > 0;
+const hasExplicitDimensions = hasExplicitWidth || hasExplicitHeight;
+const hasBothDimensions = hasExplicitWidth && hasExplicitHeight;
+
+const inferred = getStoryblokAssetDimensions(src);
+const width = hasBothDimensions ? propWidth : inferred?.width;
+const height = hasBothDimensions ? propHeight : inferred?.height;
+
+const imageUrl = hasExplicitDimensions
+  ? buildStoryblokImageUrl(src, {
+      width: hasExplicitWidth ? propWidth : 0,
+      height: hasExplicitHeight ? propHeight : 0,
+      quality,
+      focus,
+    })
+  : applyStoryblokFilters(src, { quality, focus });
+
+const layoutClass =
+  layout === "full-width"
+    ? "w-full h-auto"
+    : layout === "fixed"
+      ? ""
+      : "max-w-full h-auto";
+
+let fetchpriority: "high" | "low" | "auto";
+if (loading === "eager") {
+  fetchpriority = "high";
+} else if (loading === "lazy") {
+  fetchpriority = "low";
+} else {
+  fetchpriority = "auto";
+}
+---
+
+<img
+  src={imageUrl}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  class={[layoutClass, className].filter(Boolean).join(" ")}
+  {...rest}
+/>

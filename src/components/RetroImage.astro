@@ -1,0 +1,62 @@
+---
+import StoryblokImage from '@/components/StoryblokImage.astro';
+
+interface Props {
+  src: string;
+  alt: string;
+  label?: string;
+  metadata?: string;
+  width?: number;
+  height?: number;
+  layout?: "constrained" | "full-width" | "fixed";
+  focus?: string;
+  quality?: number;
+  loading?: "lazy" | "eager";
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  src,
+  alt,
+  label,
+  metadata,
+  width,
+  height,
+  layout,
+  focus,
+  quality,
+  loading,
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<div
+  class={`border-3 border-foreground bg-transparent shadow-[6px_6px_0px_0px] shadow-foreground overflow-hidden w-fit ${className ?? ""}`}
+  {...rest}
+>
+  <StoryblokImage
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    layout={layout}
+    focus={focus}
+    quality={quality}
+    loading={loading}
+    class="block"
+  />
+  {(label ?? metadata) && (
+    <div class="flex items-center justify-between gap-2 border-t-3 border-foreground bg-primary px-3 py-2">
+      {label && (
+        <span class="text-sm font-medium uppercase tracking-wider text-primary-foreground truncate min-w-0">
+          {label}
+        </span>
+      )}
+      {metadata && (
+        <span class="text-sm text-primary-foreground/80 shrink-0 ml-auto">{metadata}</span>
+      )}
+    </div>
+  )}
+</div>
