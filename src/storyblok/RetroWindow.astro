@@ -1,0 +1,14 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import { RetroWindow as RetroWindowComponent } from '@/components/retroui/RetroWindow';
+const { blok } = Astro.props;
+---
+
+<RetroWindowComponent title={blok.title} {...storyblokEditable(blok)}>
+	{
+		blok.content?.map((nestedBlok) => {
+			return <StoryblokComponent blok={nestedBlok} />;
+		})
+	}
+</RetroWindowComponent>

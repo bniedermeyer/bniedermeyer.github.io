@@ -9,6 +9,7 @@ const { blok } = Astro.props;
 const sectionVariants = cva('', {
 	variants: {
 		background: {
+			transparent: 'bg-transparent',
 			background: 'bg-background',
 			primary: 'bg-primary',
 			secondary: 'bg-secondary',
@@ -20,8 +21,8 @@ const sectionVariants = cva('', {
 	},
 });
 
-type BgKey = 'background' | 'primary' | 'secondary' | 'card' | 'muted' | 'accent' | 'destructive';
-const BG_VALUES: BgKey[] = ['background', 'primary', 'secondary', 'card', 'muted', 'accent', 'destructive'];
+type BgKey = 'transparent' | 'background' | 'primary' | 'secondary' | 'card' | 'muted' | 'accent' | 'destructive';
+const BG_VALUES: BgKey[] = ['transparent', 'background', 'primary', 'secondary', 'card', 'muted', 'accent', 'destructive'];
 
 function parseBg(value: unknown): BgKey | undefined {
 	return BG_VALUES.includes(value as BgKey) ? (value as BgKey) : undefined;
@@ -35,12 +36,13 @@ const customBackground = !background &&	typeof blok.custom_background.color === 
 const ariaAttrs = blok.aria_label ? { 'aria-label': blok.aria_label } : {};
 const inlineStyle = customBackground ? { backgroundColor: customBackground } : {};
 
-const sectionClass = cn('py-4 px-4', sectionVariants({ background }));
+const sectionClass = cn('py-4 px-4', sectionVariants({ background }), blok.hero_section ? 'min-h-[80vh] py-16': '');
 ---
 
 <section
 	class:list={[sectionClass]}
 	style={inlineStyle}
+	id={blok.id}
 	{...ariaAttrs}
 	{...storyblokEditable(blok)}
 >

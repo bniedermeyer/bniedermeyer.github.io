@@ -34,6 +34,8 @@ export default defineConfig({
             button: 'storyblok/Button',
             grid: 'storyblok/Grid',
             section: 'storyblok/Section',
+            text: 'storyblok/Text',
+            retro_window: 'storyblok/RetroWindow',
         },
         }), react()],
     output: 'server',
@@ -41,4 +43,8 @@ export default defineConfig({
     vite: {
         plugins: [mkcert(), tailwindcss()],
     },
+    image: {
+        domains: ['a.storyblok.com', 'a2.storyblok.com'],
+        remotePatterns: [{ protocol: "https" }],
+    }
 });

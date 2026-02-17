@@ -1,9 +1,15 @@
 ---
 import { Button as RetroButton } from '@/components/retroui/Button';
+import { icons, type IconProps } from '@lucide/astro';
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
+const iconName = blok.icon_name as keyof typeof icons;
+const inlineStyle = blok.custom_color ? { backgroundColor: blok.color.color, '--tw-shadow-color': 'var(--border)' } : {};
+
+const Icon = iconName ? icons[iconName] : null;
 ---
 
-<RetroButton {...storyblokEditable(blok)} variant={blok.variant} size={blok.size}>
+<RetroButton {...storyblokEditable(blok)} variant={blok.variant} size={blok.size} style={inlineStyle}>
+	{Icon && <Icon class="h-4 w-4 mr-2" />}
 	{blok.label}
 </RetroButton>

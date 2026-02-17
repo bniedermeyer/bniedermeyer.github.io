@@ -1,0 +1,9 @@
+---
+import { Text as RetroText } from '@/components/retroui/Text';
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<RetroText {...storyblokEditable(blok)} as={blok.as}>
+	{blok.text}
+</RetroText>
