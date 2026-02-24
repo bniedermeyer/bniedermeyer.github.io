@@ -1,0 +1,150 @@
+---
+import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
+import { transformerNotationFocus, transformerRenderIndentGuides, transformerNotationHighlight } from '@shikijs/transformers'
+import {type Schema} from "storyblok-rich-text-astro-renderer";
+import { storyblokEditable } from "@storyblok/astro";
+import { Text } from "@/components/retroui/Text";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { Code } from 'astro:components';
+
+
+const alignMap = {
+                left: "start",
+                center: "center",
+                right: "end",
+            }
+
+const schema: Schema = {
+    nodes:{
+        paragraph: (node) => {
+        
+            const alignment = alignMap[(node as any).attrs?.textAlign];
+            return ({
+                component: Text,
+                props: {
+                    as: "p",
+                    alignment: alignment ?? undefined,
+                },
+            });
+        },
+        heading: ({attrs}) => ({
+            component: Text,
+            props: {
+                as: `h${attrs?.level}`,
+                alignment: alignMap[(attrs as unknown as {textAlign: string})?.textAlign] ?? undefined,
+            },
+        }),
+        bullet_list: () => ({
+            component: Text,
+            props: {
+                as: "ul",
+            },
+        }),
+        ordered_list: () => ({
+            component: Text,
+            props: {
+                as: "ol",
+            },
+        }),
+        list_item: () => ({
+            component: Text,
+            props: {
+                as: "li",
+            },
+        }),
+        code_block: ({content, attrs: {class: className}}) => {
+            const lang = className.split('language-')[1];
+            return ({
+                component: Code,
+                props: {
+                    lang,
+                    theme: 'github-dark',
+                    code: content[0].text,
+                    class: "p-4 rounded-md",
+                    transformers: [transformerNotationFocus(), transformerRenderIndentGuides(), transformerNotationHighlight()],
+                },
+            });
+        },
+    },
+    marks: {
+        link: ({attrs: {href}}) => {
+         
+            return ({
+                component: Text,
+                props: {
+                    as: "a",
+                    href
+                },
+            });
+        }
+    }
+}
+
+const { blok } = Astro.props;
+const { text } = blok;
+---
+
+<RichTextRenderer content={text} schema={schema} resolver={(blok) => ({
+    component: StoryblokComponent,
+    props: { blok },
+  })} {...storyblokEditable(blok)} />
+
+<style is:global>
+    code {
+    counter-reset: step;
+    counter-increment: step 0;
+    }
+
+    code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1.5rem;
+    display: inline-block;
+    text-align: right;
+    color: rgba(115,138,148,.4)
+    }
+
+    pre.has-focused .line:not(.focused) {
+      filter: blur(1.5px);
+      transition: filter 0.5s ease-in-out;
+    }
+
+    pre.has-focused .line.focused::before, pre.has-highlighted .line.highlighted::before {
+        color: color-mix(in srgb, var(--color-primary) 75%, transparent);
+    }
+    pre.has-focused:hover .line:not(.focused) {
+        filter: none;
+        transition: filter 0.5s ease-in-out;
+    }
+
+    pre.has-highlighted .line.highlighted {
+        background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+        transition: background-color .5s;
+        margin: 0 -24px;
+        padding: 0 24px;
+        width: calc(100% + 38px);
+        display: inline-block;
+    }
+
+    pre .indent {
+        display: inline-block;
+        position: relative;
+        left: var(--indent-offset);
+    }
+
+    pre .indent:empty {
+        height: 1lh;
+        vertical-align: bottom;
+    }
+
+    pre .indent::before {
+        content: '';
+        position: absolute;
+        opacity: 0.15;
+        width: 1px;
+        height: 100%;
+        background-color: currentColor;
+    }
+
+</style>
