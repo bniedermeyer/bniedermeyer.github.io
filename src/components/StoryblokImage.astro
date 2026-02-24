@@ -4,13 +4,14 @@ import {
   buildStoryblokImageUrl,
   getStoryblokAssetDimensions,
 } from '@/lib/storyblok-image';
-
+import { cn } from '@/lib/utils';
 interface Props {
   src: string;
   alt: string;
   width?: number;
   height?: number;
   layout?: "constrained" | "full-width" | "fixed";
+  aspect?: "square" | "landscape" | "portrait";
   focus?: string;
   quality?: number;
   loading?: "lazy" | "eager";
@@ -24,6 +25,7 @@ const {
   width: propWidth,
   height: propHeight,
   layout = "constrained",
+  aspect,
   focus,
   quality = 80,
   loading = "lazy",
@@ -56,6 +58,8 @@ const layoutClass =
       ? ""
       : "max-w-full h-auto";
 
+const styles = cn(layoutClass, aspect, className);
+
 let fetchpriority: "high" | "low" | "auto";
 if (loading === "eager") {
   fetchpriority = "high";
@@ -73,6 +77,6 @@ if (loading === "eager") {
   height={height}
   loading={loading}
   fetchpriority={fetchpriority}
-  class={[layoutClass, className].filter(Boolean).join(" ")}
+  class={styles}
   {...rest}
 />

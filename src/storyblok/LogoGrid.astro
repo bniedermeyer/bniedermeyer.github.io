@@ -1,0 +1,15 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokImage from '@/components/StoryblokImage.astro';
+const { blok } = Astro.props;
+
+---
+
+<div class="flex flex-wrap gap-4 md:max-w-3xl md:mx-auto justify-center items-center" {...storyblokEditable(blok)}>
+	{blok.logos.map((logo) => (
+        <div class="aspect-square w-24 h-24 p-2">
+
+		<StoryblokImage src={logo.filename} alt={logo.alt} class=" object-contain w-full h-full" />
+        </div>
+	))}
+</div>

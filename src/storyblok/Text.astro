@@ -4,6 +4,6 @@ import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 ---
 
-<RetroText {...storyblokEditable(blok)} as={blok.as}>
+<RetroText {...storyblokEditable(blok)} as={blok.as} alignment={blok.alignment} text_color={blok.text_color}>
 	{blok.text}
 </RetroText>

@@ -42,6 +42,7 @@ export default defineConfig({
             badge: 'storyblok/Badge',
             alert: 'storyblok/Alert',
             card: 'storyblok/Card',
+            logo_grid: 'storyblok/LogoGrid',
         },
         }), react()],
     output: 'server',

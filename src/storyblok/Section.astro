@@ -36,7 +36,7 @@ const customBackground = !background &&	typeof blok.custom_background.color === 
 const ariaAttrs = blok.aria_label ? { 'aria-label': blok.aria_label } : {};
 const inlineStyle = customBackground ? { backgroundColor: customBackground } : {};
 
-const sectionClass = cn('py-4 px-4', sectionVariants({ background }), blok.hero_section ? 'min-h-[80vh] py-16': '');
+const sectionClass = cn('py-4 px-4', sectionVariants({ background }), blok.hero_section ? 'min-h-[75vh] py-16': '');
 ---
 
 <section

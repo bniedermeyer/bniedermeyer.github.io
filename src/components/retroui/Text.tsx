@@ -14,6 +14,17 @@ const textVariants = cva("font-head", {
       h5: "text-lg font-normal",
       h6: "text-base font-normal",
     },
+    alignment: {
+      start: "text-start",
+      center: "text-center",
+      end: "text-end",
+    },
+    text_color: {
+      primary: "text-primary",
+      secondary: "text-secondary",
+      muted: "text-muted",
+      accent: "text-accent"
+    }
   },
   defaultVariants: {
     as: "p",
@@ -27,10 +38,10 @@ interface TextProps
 }
 
 export const Text = (props: TextProps) => {
-  const { className, as, ...otherProps } = props;
+  const { className, as, alignment, text_color, ...otherProps } = props;
   const Tag: ElementType = as || "p";
 
   return (
-    <Tag className={cn(textVariants({ as }), className)} {...otherProps} />
+    <Tag className={cn(textVariants({ as, alignment, text_color }), className)} {...otherProps} />
   );
 };

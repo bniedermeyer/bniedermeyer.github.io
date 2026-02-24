@@ -13,14 +13,13 @@ if (blok.link) {
 }
 ---
 
-<RetroCard url={url} {...storyblokEditable(blok)}>
+<RetroCard url={url}{...storyblokEditable(blok)}>
 	{hasImage && (
-		<RetroCard.Content className="pb-0">
+		<RetroCard.Content className="mt-4 p-4 flex items-center justify-center aspect-square overflow-hidden ">
 			<StoryblokImage
 				src={asset.filename}
 				alt={asset.alt ?? ''}
-				layout="full-width"
-				class="w-full h-full object-cover"
+				className="w-full h-full object-contain"
 			/>
 		</RetroCard.Content>
 	)}
