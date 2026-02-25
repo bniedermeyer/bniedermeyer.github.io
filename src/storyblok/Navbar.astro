@@ -2,8 +2,8 @@
 import { storyblokEditable } from "@storyblok/astro";
 import Button from "@/components/retroui/Button.astro";
 import { icons, type IconProps } from '@lucide/astro';
-import { Text } from "@/components/retroui/Text";
-import { RetroWindow } from "@/components/retroui/RetroWindow";
+import Text from "@/components/retroui/Text.astro";
+import RetroWindow from "@/components/retroui/RetroWindow.astro";
 
 const { blok } = Astro.props;
 const { text, links } = blok;
@@ -21,17 +21,16 @@ const resolvedLinks = links.map((link) => {
 });
 
 const pathname = Astro.url.pathname;
-console.log(pathname);
-
 ---
 
 <nav {...storyblokEditable(blok)}>
     <RetroWindow title="Navigation">
         <div class="flex justify-between items-center">
-            <Text as="span" className="text-2xl font-bold">{text}</Text>
+            <Text as="span" class="text-2xl font-bold">{text}</Text>
             <ul class="gap-4 hidden md:flex">
                 {resolvedLinks.map((link) => <li><a href={link.resolvedUrl}><Button asChild variant={pathname === link.resolvedUrl ? "default" : "outline"}>{link.icon && <link.icon class="h-4 w-4 mr-2" />} {link.label}</Button></a></li>)}
             </ul>
+   
         </div>
     </RetroWindow>
 </nav>

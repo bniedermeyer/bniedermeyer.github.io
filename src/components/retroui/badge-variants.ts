@@ -1,8 +1,6 @@
-import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import React, { type HTMLAttributes } from "react";
 
-const badgeVariants = cva("font-semibold rounded", {
+export const badgeVariants = cva("font-semibold rounded", {
   variants: {
     variant: {
       default: "bg-muted text-muted-foreground",
@@ -22,23 +20,4 @@ const badgeVariants = cva("font-semibold rounded", {
   },
 });
 
-interface ButtonProps
-  extends HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof badgeVariants> {}
-
-export function Badge({
-  children,
-  size = "md",
-  variant = "default",
-  className = "",
-  ...props
-}: ButtonProps) {
-  return (
-    <span
-      className={cn(badgeVariants({ variant, size }), className)}
-      {...props}
-    >
-      {children}
-    </span>
-  );
-}
+export type BadgeVariantProps = VariantProps<typeof badgeVariants>;

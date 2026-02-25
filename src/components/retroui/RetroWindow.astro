@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  class?: string;
+  className?: string;
+}
+
+const { title, class: className, className: classNameProp } = Astro.props;
+---
+
+<div
+  class={`border-3 border-foreground bg-transparent shadow-[6px_6px_0px_0px] shadow-foreground ${className ?? classNameProp ?? ""}`}
+>
+  <div class="flex items-center gap-2 border-b-3 border-foreground bg-primary px-3 py-2">
+    <div class="flex gap-1.5">
+      <span class="block h-3 w-3 border-2 border-foreground bg-accent" />
+      <span class="block h-3 w-3 border-2 border-foreground bg-secondary" />
+      <span class="block h-3 w-3 border-2 border-foreground bg-muted" />
+    </div>
+    <span class="text-sm font-medium uppercase tracking-wider text-primary-foreground">
+      {title}
+    </span>
+  </div>
+  <div class="p-5">
+    <slot />
+  </div>
+</div>

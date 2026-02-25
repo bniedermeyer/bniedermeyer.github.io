@@ -1,0 +1,29 @@
+---
+import { cn } from "@/lib/utils";
+import { textVariants, type TextVariantProps } from "./text-variants";
+
+interface Props extends TextVariantProps {
+  class?: string;
+  className?: string;
+  [key: string]: unknown;
+}
+
+const {
+  as = "p",
+  alignment,
+  text_color,
+  class: className,
+  className: classNameProp,
+  ...otherProps
+} = Astro.props;
+
+const resolvedAs = as ?? "p";
+const Tag = resolvedAs;
+---
+
+<Tag
+  class={cn(textVariants({ as: resolvedAs, alignment, text_color }), className ?? classNameProp)}
+  {...otherProps}
+>
+  <slot />
+</Tag>

@@ -1,0 +1,26 @@
+---
+import { cn } from "@/lib/utils";
+import { alertVariants, type AlertVariantProps } from "./alert-variants";
+import Text from "./Text.astro";
+
+interface Props extends AlertVariantProps {
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { variant = "default", status, class: className, ...rest } = Astro.props;
+---
+
+<div role="alert" class={cn(alertVariants({ variant, status }), className)} {...rest}>
+  {Astro.slots.has("title") && (
+    <Text as="h5">
+      <slot name="title" />
+    </Text>
+  )}
+  {Astro.slots.has("description") && (
+    <div class="text-muted-foreground">
+      <slot name="description" />
+    </div>
+  )}
+  <slot />
+</div>

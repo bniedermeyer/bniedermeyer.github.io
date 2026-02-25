@@ -1,14 +1,14 @@
 ---
-import { Alert as RetroAlert } from '@/components/retroui/Alert';
+import RetroAlert from '@/components/retroui/Alert.astro';
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 ---
 
 <RetroAlert {...storyblokEditable(blok)} variant={blok.variant} status={blok.status}>
 	{blok.title && (
-		<RetroAlert.Title>{blok.title}</RetroAlert.Title>
+		<Fragment slot="title">{blok.title}</Fragment>
 	)}
 	{blok.description && (
-		<RetroAlert.Description>{blok.description}</RetroAlert.Description>
+		<Fragment slot="description">{blok.description}</Fragment>
 	)}
 </RetroAlert>

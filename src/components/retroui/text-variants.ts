@@ -1,14 +1,12 @@
-import { type ElementType, type HTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
 
-const textVariants = cva("font-head", {
+export const textVariants = cva("font-head", {
   variants: {
     as: {
       p: "font-sans text-base",
       span: "font-sans text-base",
-      ol:"list-decimal list-inside",
-      ul:"list-disc list-inside",
+      ol: "list-decimal list-inside",
+      ul: "list-disc list-inside",
       li: "font-sans text-base",
       a: "font-sans text-base underline hover:underline-offset-4 hover:decoration-4 hover:decoration-primary underline-offset-2 decoration-secondary cursor-pointer",
       h1: "text-4xl lg:text-5xl font-bold",
@@ -27,25 +25,12 @@ const textVariants = cva("font-head", {
       primary: "text-primary",
       secondary: "text-secondary",
       muted: "text-muted",
-      accent: "text-accent"
-    }
+      accent: "text-accent",
+    },
   },
   defaultVariants: {
     as: "p",
   },
 });
 
-interface TextProps
-  extends Omit<HTMLAttributes<HTMLElement>, "className">,
-    VariantProps<typeof textVariants> {
-  className?: string;
-}
-
-export const Text = (props: TextProps) => {
-  const { className, as, alignment, text_color, ...otherProps } = props;
-  const Tag: ElementType = as || "p";
-
-  return (
-    <Tag className={cn(textVariants({ as, alignment, text_color }), className)} {...otherProps} />
-  );
-};
+export type TextVariantProps = VariantProps<typeof textVariants>;

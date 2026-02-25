@@ -1,7 +1,8 @@
 ---
-import { Card as RetroCard } from '@/components/retroui/Card';
+import RetroCard from '@/components/retroui/Card.astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import StoryblokImage from '@/components/StoryblokImage.astro';
+import Text from '@/components/retroui/Text.astro';
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 const hasHeader = blok.title || blok.description;
@@ -15,25 +16,25 @@ if (blok.link) {
 
 <RetroCard url={url}{...storyblokEditable(blok)}>
 	{hasImage && (
-		<RetroCard.Content className="mt-4 p-4 flex items-center justify-center aspect-square overflow-hidden ">
+		<div slot="media" class="mt-4 p-4 flex items-center justify-center aspect-square overflow-hidden">
 			<StoryblokImage
 				src={asset.filename}
 				alt={asset.alt ?? ''}
-				className="w-full h-full object-contain"
+				class="w-full h-full object-contain"
 			/>
-		</RetroCard.Content>
+		</div>
 	)}
 	{hasHeader && (
-		<RetroCard.Header className={hasImage ? 'pb-0' : undefined}>
-			{blok.title && <RetroCard.Title>{blok.title}</RetroCard.Title>}
-			{blok.description && <RetroCard.Description>{blok.description}</RetroCard.Description>}
-		</RetroCard.Header>
+		<div slot="header" class:list={["flex flex-col justify-start p-4", { "pb-0": hasImage }]}>
+			{blok.title && <Text as="h3" class="mb-2">{blok.title}</Text>}
+			{blok.description && <p class="text-muted-foreground">{blok.description}</p>}
+		</div>
 	)}
-	<RetroCard.Content>
+	<div class="p-4">
 		{
 			blok.content?.map((nestedBlok) => (
 				<StoryblokComponent blok={nestedBlok} />
 			))
 		}
-	</RetroCard.Content>
+	</div>
 </RetroCard>
