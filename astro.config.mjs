@@ -44,6 +44,7 @@ export default defineConfig({
             card: 'storyblok/Card',
             logo_grid: 'storyblok/LogoGrid',
             richtext: 'storyblok/RichText',
+            navbar: 'storyblok/Navbar',
         },
         }), react()],
     output: 'server',

@@ -1,0 +1,28 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import { Button } from "@/components/retroui/Button";
+import { icons, type IconProps } from '@lucide/astro';
+
+const { blok } = Astro.props;
+const { text, links } = blok;
+
+const resolvedLinks = links.map((link) => {
+    const urlObj = link.url;
+    const iconName = link.icon as keyof typeof icons;
+    const Icon = iconName ? icons[iconName] : null;
+    return {
+        ...link,
+        ...urlObj,
+        resolvedUrl: urlObj.url || `/${urlObj.cached_url}`,
+        icon: Icon ?? null
+    }
+});
+
+---
+
+<nav {...storyblokEditable(blok)} class="flex justify-between items-center">
+    <h1 class="text-2xl font-bold">{text}</h1>
+    <ul class="flex gap-4">
+        {resolvedLinks.map((link) => <li><a href={link.resolvedUrl}><Button asChild>{link.icon && <link.icon class="h-4 w-4 mr-2" />} {link.label}</Button></a></li>)}
+    </ul>
+</nav>
