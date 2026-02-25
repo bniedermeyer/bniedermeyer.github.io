@@ -1,0 +1,17 @@
+---
+import { cn } from "@/lib/utils";
+import { buttonVariants, type ButtonVariantProps } from "./button-variants";
+
+interface Props extends ButtonVariantProps {
+  class?: string;
+  asChild?: boolean;
+  [key: string]: unknown;
+}
+
+const { variant = "default", size = "md", class: className, asChild = false, ...rest } = Astro.props;
+const Element = asChild ? "span" : "button";
+---
+
+<Element class={cn(buttonVariants({ variant, size }), className)} {...rest}>
+  <slot />
+</Element>
