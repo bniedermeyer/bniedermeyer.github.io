@@ -4,7 +4,6 @@ import { textVariants, type TextVariantProps } from "./text-variants";
 
 interface Props extends TextVariantProps {
   class?: string;
-  className?: string;
   [key: string]: unknown;
 }
 
@@ -13,7 +12,6 @@ const {
   alignment,
   text_color,
   class: className,
-  className: classNameProp,
   ...otherProps
 } = Astro.props;
 
@@ -22,7 +20,7 @@ const Tag = resolvedAs;
 ---
 
 <Tag
-  class={cn(textVariants({ as: resolvedAs, alignment, text_color }), className ?? classNameProp)}
+  class={cn(textVariants({ as: resolvedAs, alignment, text_color }), className)}
   {...otherProps}
 >
   <slot />

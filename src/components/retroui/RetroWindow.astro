@@ -1,15 +1,27 @@
 ---
+import { cva } from "class-variance-authority";
 interface Props {
   title: string;
   class?: string;
-  className?: string;
+  spacing?: "default" | "compressed";
 }
 
-const { title, class: className, className: classNameProp } = Astro.props;
+const { title, class: className, spacing = "default" } = Astro.props;
+const variants = cva("",{
+  variants: {
+    spacing: {
+      default: "p-5",
+      compressed: "px-5 py-2"
+    }
+  },
+  defaultVariants: {
+    spacing: "default",
+  },
+});
 ---
 
 <div
-  class={`border-3 border-foreground bg-transparent shadow-[6px_6px_0px_0px] shadow-foreground ${className ?? classNameProp ?? ""}`}
+  class={`border-3 border-foreground bg-transparent shadow-[6px_6px_0px_0px] shadow-foreground ${className ?? ""}`}
 >
   <div class="flex items-center gap-2 border-b-3 border-foreground bg-primary px-3 py-2">
     <div class="flex gap-1.5">
@@ -21,7 +33,7 @@ const { title, class: className, className: classNameProp } = Astro.props;
       {title}
     </span>
   </div>
-  <div class="p-5">
+  <div class={variants({ spacing })}>
     <slot />
   </div>
 </div>
